@@ -9,7 +9,7 @@ class Solution:
         
         postfix = 1
         for i in range(len(nums) - 1, -1, -1): #from end to -1, decrement
-            res[i] = postfix
+            res[i] *= postfix
             postfix *= nums[i]
         return res
 
