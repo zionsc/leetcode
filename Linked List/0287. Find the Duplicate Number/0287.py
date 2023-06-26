@@ -1,26 +1,15 @@
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
-        mySet = set()
-        for num in nums:
-            if num in mySet:
-                return num
-            else:
-                mySet.add(num)
-        return None
+        slow, fast = 0, 0
+        while True:
+            slow = nums[slow]
+            fast = nums[nums[fast]]
+            if slow == fast:
+                break # slow == fast, there is a cycle --> the reason we do this is to make sure we find any value first. 
 
-
-# class Solution:
-#     def findDuplicate(self, nums: List[int]) -> int:
-#         slow, fast = 0, 0
-#         while True:
-#             slow = nums[slow]
-#             fast = nums[nums[fast]]
-#             if slow == fast:
-#                 break
-
-#         slow2 = 0
-#         while True:
-#             slow = nums[slow]
-#             slow2 = nums[slow2]
-#             if slow == slow2:
-#                 return slow
+        slow2 = 0
+        while True: 
+            slow = nums[slow]
+            slow2 = nums[slow2]
+            if slow == slow2: # slow == slow2, then there are two values that are the same that are not at the same index
+                return slow
