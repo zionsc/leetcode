@@ -1,7 +1,7 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         count = {}
-        freq = [[] for i in range(len(nums) + 1)]
+        freq = [[] for i in range(len(nums) + 1)] # * len something makes it by copy, for i in range(len(nums)) makes it reference
 
         for n in nums: # adding to count hashmap
             count[n] = 1 + count.get(n, 0)
