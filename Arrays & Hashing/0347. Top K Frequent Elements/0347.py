@@ -9,8 +9,9 @@ class Solution:
             freq[c].append(n) # index is number of times it exists, n is the actual number in nums
 
         res = []
-        for i in range(len(freq) - 1, 0, -1): # from end to 0, decremet (-1)
-            for n in freq[i]: # list in each index
-                res.append(n)
-                if len(res) == k:
+        for i in range(len(freq)-1, 0, -1):
+            for j in freq[i]:
+                res.append(j)
+                k -= 1
+                if k == 0:
                     return res
