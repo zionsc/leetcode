@@ -8,3 +8,6 @@
 r//3 and c//3 as // is integer div to return 0 1 2 x 0 1 2 for each of the 9 squares, but / is float point division.
 0659. Encode and Decode Strings: Length of string+delimeter in order to make each encode unique --> number is str[i:j] with j being the first # after the number (length of string) res.append(str[j+1 : j+1+length]), then i = j + 1 + length --> to find next #.
 0128. Longest Consecutive Sequence: Check if number is the start of a sequence (if n-1 is not in set) --> while (n+length) is in set, length += 1 
+0020. Valid Parantheses: Hashmap that maps closing parenthesis to opening parenthesis --> iterate thru string, if stumble upon closing parenthesis, if not empty and 
+stack[-1] (last item in stack) is the matching parenthesis, stack.pop(). Else return false as the closing and open do not match. If stumble upon open, simply just 
+stack.append(). Return true only if stack is empty at the end, else return false. 
