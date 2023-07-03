@@ -9,7 +9,7 @@ class Solution:
         stack = []
 
         for p , s in sorted(pair, reverse=True: # or I can do [::-1]
-            stack.append((target - p) / s)
+            stack.append((target - p) / s) # this appends the speed to the stack
 
             # if the car behind the front car has a faster time to reach the target, then it will become one fleet
             if len(stack) >= 2 and stack[-1] <= stack[-2]:
