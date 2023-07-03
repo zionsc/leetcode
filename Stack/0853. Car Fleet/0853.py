@@ -16,3 +16,5 @@ class Solution:
                 stack.pop()
 
         return len(stack)
+        # Time Complexity: O(nlogn)
+        # Space Complexity: O(n)
