@@ -16,7 +16,8 @@ class Solution:
                 stack.append("(")
                 backtrack(openN + 1, closedN)
                 stack.pop() # stack is basically a global variable, once the one combination finishes, must pop the string that we've added
-            
+                # basically recursively removes this step, backtracks.
+
             if closedN < openN:
                 stack.append(")")
                 backtrack(openN, closedN + 1)
