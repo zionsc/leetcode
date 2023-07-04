@@ -3,7 +3,7 @@ class Solution:
         maxArea = 0
         stack = [] # pair (start index of rectangle, height)
 
-        for i, h in enumerate(heights):
+        for i, h in enumerate(heights): # enumerate allows both index and value 
             start = i # start at the where it was discovered unless CHANGED BY EXTENDING BACKWARDS
             while stack and stack[-1][1] > h: # Stack is not empty, the found height is less than the stack height
                 index, height = stack.pop() # pop from stack, retrieve the data from the popped bar
