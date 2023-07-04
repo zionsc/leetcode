@@ -16,5 +16,5 @@ class Solution:
         for i, h in stack:
             maxArea = max(maxArea, h * (len(heights) - i)) # since the values left in the stack go from their starting index --> to the end
         
-        return maxArea
+        return maxArea # return maxArea
 
