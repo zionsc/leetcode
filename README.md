@@ -25,3 +25,5 @@ stack.append(). Return true only if stack is empty at the end, else return false
 
 TWO-POINTERS:
 0125. Valid Palindrome: Left and Right Pointers, increment until you reach an alphanum --> create this by comparing ASCII values --> ord('A') <= ord(c) <= ord('Z') or ord('a') <= ord(c) <= ord('z') or ord('0') <= ord(c) <= ord('9') --> only for recursion you can have another function inside another function, when calling non-recursively, make sure to make it a separate helper function and call it with self.alphaNum(c) --> must do that when calling other functions from an object in python.
+0167. Two Sum II: Basically use the idea that it is sorted. Pointers left and right, increment and decrement based on whether the numbers[l] + numbers[r] > or < to target (CAN do this because it is sorted). If it 
+is > target, then r -= 1. If it is < target, then l += 1 (AS IT IS SORTED in INCREASING ORDER) --> else return [l + 1, r + 1] --> as they want 1 indexing.  
