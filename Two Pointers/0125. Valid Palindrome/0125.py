@@ -14,7 +14,7 @@ class Solution:
 
         l, r = 0, len(s) - 1
         while l < r:
-            while l < r and not self.alphanum(s[l]): # Must use self.somehing when calling another function, unless recursion
+            while l < r and not self.alphanum(s[l]): # Must use self.somehing when a part of the class itself
                 l += 1
             while l < r and not self.alphanum(s[r]):
                 r -= 1
