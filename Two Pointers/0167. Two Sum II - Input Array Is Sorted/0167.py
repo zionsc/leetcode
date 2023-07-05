@@ -12,7 +12,7 @@ class Solution:
             elif (numbers[l] + numbers[r] < target):
                 l += 1
 
-        return [l + 1, r + 1]
+        return [l + 1, r + 1] 
 
 
 
