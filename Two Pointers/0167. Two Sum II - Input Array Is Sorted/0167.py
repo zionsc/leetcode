@@ -4,6 +4,10 @@ class Solution:
 
         l, r = 0, len(numbers) - 1
 
+
+        # Basically using the fact that it is sorted to our advantage. 
+        # It will always either be greater or smaller or the sum.
+        
         while l < r:
             if (numbers[l] + numbers[r] == target):
                 return [l + 1, r + 1]
