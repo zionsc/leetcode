@@ -28,4 +28,4 @@ TWO-POINTERS:
 0167. Two Sum II: Basically use the idea that it is sorted. Pointers left and right, increment and decrement based on whether the numbers[l] + numbers[r] > or < to target (CAN do this because it is sorted). If it 
 is > target, then r -= 1. If it is < target, then l += 1 (AS IT IS SORTED in INCREASING ORDER) --> else return [l + 1, r + 1] --> as they want 1 indexing.  
 0015. 3Sum: Basically use the idea that we can sort the array in order to do the same operation as Two Sum II with a left and right pointer. Make sure a == nums[i - 1]: continue --> since we cannot have the same a twice with the same subset of numbers. at the end, make sure to do res.append([a, nums[l], nums[r]]) then l += 1 and r -= 1 then do a while loop for while nums[l] == nums[l - 1] and l < r: l += 1 (can also do for r instead) --> the reason for this is that we need to find the other subsets of a that are also valid answers that are not duplicates. 
-
+0011. Container With Most Water: 
