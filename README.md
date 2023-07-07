@@ -33,5 +33,5 @@ is > target, then r -= 1. If it is < target, then l += 1 (AS IT IS SORTED in INC
 
 
 BINARY SEARCH:
-
+0704. Binary Search: Always use self.function() when calling a function inside of a class --> also everything in the binarysearch function should be inside if right >= left statement because it cannot go out of bounds. 
 
