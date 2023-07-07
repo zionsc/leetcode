@@ -32,7 +32,7 @@ is > target, then r -= 1. If it is < target, then l += 1 (AS IT IS SORTED in INC
 0042. Trapping Rain Water: Basically we want to keep track of a maxLeft and a maxRight. The reason for that is because we know that the smaller one will be the bottleneck. The furthest to the left and furthest to the right bars will hold min(furthestleft, furthestright) * whatever space there is available of water. Thus we know that we can increment the pointers accordingly. if maxLeft < maxRight: then l += 1 (increment the left pointer) maxLeft = max(maxLeft, height[l]) --> this will make sure we update the next left bottleneck. Then we can simply do result += (maxLeft - height[l]) -> this will make sure that we hold water if our current bar is lower than the bottleneck. Else if it is the same as the bottleneck, then we will simply not hold any water at all (res += 0)
 
 
-BINARY SEARCH:
+BINARY SEARCH: Maybe perform binary search more than once
 0704. Binary Search: Always use self.function() when calling a function inside of a class --> also everything in the binarysearch function should be inside if right >= left statement because it cannot go out of bounds. 
 0074. Search a 2D Matrix: Find the row that it is contained in first. Then find the number within the row that it can be in. Return false is the row is not found at all.
 
