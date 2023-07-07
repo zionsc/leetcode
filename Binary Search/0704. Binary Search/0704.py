@@ -11,3 +11,10 @@ class Solution:
             # base case
             if nums[mid] == target:
                 return mid
+            elif nums[mid] < target:
+                return self.binarysearch(nums, target, mid + 1, r)
+            else: # nums[mid] > target
+                return self.binarysearch(nums, target, l, mid - 1)
+            
+            # if not found
+        return -1
