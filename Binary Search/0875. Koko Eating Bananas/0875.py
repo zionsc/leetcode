@@ -11,6 +11,7 @@ class Solution:
             k = l + ((r - l) // 2)
 
             for p in piles:
-                
+                # update hours for the referenced k value --> math.ceil() rounds up
+                hours += math.ceil(p / k)
 
         
