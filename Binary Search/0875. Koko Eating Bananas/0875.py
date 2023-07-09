@@ -17,5 +17,11 @@ class Solution:
             # if the hours that we got for that specific k is smaller or equal to the max hours
             if hours <= h:
                 res = min(res, k)
+                r = k - 1
+            
+            # else if it does not work (k is too small!) --> must try larger values to try to finish earlier than given h or equal to that time
+            else:
+                l = k + 1
+
 
         
