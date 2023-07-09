@@ -6,6 +6,8 @@ class Solution:
         res = max(piles)
 
         while l <= r:
-            
+            hours = 0
+            # mid value
+            k = l + ((r - l) // 2)
 
         
