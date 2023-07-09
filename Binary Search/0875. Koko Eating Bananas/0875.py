@@ -14,4 +14,8 @@ class Solution:
                 # update hours for the referenced k value --> math.ceil() rounds up
                 hours += math.ceil(p / k)
 
+            # if the hours that we got for that specific k is smaller or equal to the max hours
+            if hours <= h:
+                res = min(res, k)
+
         
