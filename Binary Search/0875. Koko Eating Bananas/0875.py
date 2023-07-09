@@ -10,4 +10,7 @@ class Solution:
             # mid value
             k = l + ((r - l) // 2)
 
+            for p in piles:
+                
+
         
