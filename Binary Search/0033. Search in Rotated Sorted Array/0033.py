@@ -6,3 +6,7 @@ class Solution:
             mid = l + ((r - l) // 2)
 
             if nums[mid] == target:
+                return mid
+
+            # left-side is sorted (strictly increasing)
+            if nums[l] <= nums[mid]
