@@ -13,8 +13,12 @@ class TimeMap:
         res = "" # res is initialized to an empty list in order to make sure that it is simply returned if not found in keys
         values = self.storage.get(key, []) # values = storage[key]'s list of pairs. Else it returns an empty list []
 
-        m = l + ((r - l) // 2)
+        # Binary Search for valid timestamp!
+
+        l, r = 0, len(values) - 1
 
         while l <= r:
-            if values[m] <=
+            m = l + ((r - l) // 2)
+            if values[m][1] <= timestamp: # if it is a valid timestamp (less than or equal to timestamp at values[m]) -> values[m][1] is timestamp of values[m]
+                res = values[m][]
 
