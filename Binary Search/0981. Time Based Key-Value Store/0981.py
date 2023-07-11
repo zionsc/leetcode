@@ -20,5 +20,5 @@ class TimeMap:
         while l <= r:
             m = l + ((r - l) // 2)
             if values[m][1] <= timestamp: # if it is a valid timestamp (less than or equal to timestamp at values[m]) -> values[m][1] is timestamp of values[m]
-                res = values[m][]
+                res = values[m][0] # res is updated to the most recent valid timestamp (most close to but less than or equal to given input timestamp)
 
