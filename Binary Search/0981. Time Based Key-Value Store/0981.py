@@ -21,5 +21,10 @@ class TimeMap:
             m = l + ((r - l) // 2)
             if values[m][1] <= timestamp: # if it is a valid timestamp (less than or equal to timestamp at values[m]) -> values[m][1] is timestamp of values[m]
                 res = values[m][0] # res is updated to the most recent valid timestamp (most close to but less than or equal to given input timestamp)
-                l = mid + 1 # update the binary search, keep searching for more valid timestamps! (most close to but less than or equal to the given input timestamp)
+                l = m + 1 # update the binary search, keep searching for more valid timestamps! (most close to but less than or equal to the given input timestamp)
+                # search right side now
+            else: # not a valid timestamp --> larger than given input timestamp
+                r = m - 1 # search left-side now 
+        
+        return res
 
