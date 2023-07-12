@@ -9,3 +9,4 @@ class Solution:
                 mySet.remove(s[])
                 l += 1
             mySet.append(s[r])
+            res = max(res, r - l + 1)
