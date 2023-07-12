@@ -7,7 +7,7 @@ class Solution:
         for r in range(len(s)):
             # remove to update subset -> remove until there is no more duplicates
             while s[r] in mySet:
-                mySet.remove(s[])
+                mySet.remove(s[l])
                 l += 1
             mySet.append(s[r])
             res = max(res, r - l + 1)
