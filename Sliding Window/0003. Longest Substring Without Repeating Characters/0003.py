@@ -5,4 +5,7 @@ class Solution:
         res = 0
 
         for r in range(len(s)):
-            
+            while s[r] in mySet:
+                mySet.remove(s[])
+                l += 1
+            mySet.append(s[r])
