@@ -5,5 +5,8 @@ class Solution:
 
         while r < len(prices):
             # profit
+            if prices[l] < prices[r]:
+                # update maxProfit if necessary
+                maxProfit = max(maxProfit, prices[r] - prices[l])
 
             # negative value --> no profit
