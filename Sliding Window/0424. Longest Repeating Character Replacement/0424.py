@@ -11,7 +11,7 @@ class Solution:
             count[s[r]] += 1 # append whatever is found first
             maxfrequency = max(maxfrequency, count[s[r]]) # update maxfrequency to be the newly updated character or whatever it was previously 
             # ^^ works as only an increase in any character would result in the maxfrequency getting replaced
-            while (r - l + 1) - maxfrequency > k:
+            while (r - l + 1) - maxfrequency > k: # if the number of changes we need to make exceed k, then that length does not work, slide the window. -> l += 1
                 count[s[l]] -= 1
                 l += 1
             
