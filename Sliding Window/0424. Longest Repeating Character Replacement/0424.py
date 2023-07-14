@@ -14,6 +14,9 @@ class Solution:
             while (r - l + 1) - maxfrequency > k: # if the number of changes we need to make exceed k, then that length does not work, slide the window. -> l += 1
                 count[s[l]] -= 1
                 l += 1
+                # the reason we do not need to update the maxfrequency when we subtract a value from the hashmap is because:
+                # in order for the (length - maxfrequency) <= k (because we need to make k changes or less), then the maxfrequency must be MAXIMIZED as possible!
+                # this means that only an increase in the maxfrequency would change res = max(res, r - l + 1)
             
             res = max(res, r - l + 1)
     
