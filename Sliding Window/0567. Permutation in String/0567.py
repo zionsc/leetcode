@@ -23,4 +23,22 @@ class Solution:
             if matchCount == 26:
                 return True
 
+            # update s2Count based on the new window --> update window after as we need access right now
+            s2Count[s2[r] - ord('a')] += 1
+            if s2Count[s[r] - ord('a')] == s1Count[s[r] - ord('a')]:
+                matchCount += 1
+            # this is because we increased it. It can only be greater or equal to. as s1[whatever] will be 1 or 0
+            elif s2Count[s[r] - ord('a')] > s1Count[s[r] - ord('a')]:
+                matchCount -= 1
+            
+            s2Count[s[l] - ord('a')] -= 1
+            if s2Count[s[l] - ord('a')] == s1Count[s[l] - ord('a')]:
+                matchCount += 1
+            elif s2Count[s[l] - ord('a')] < s1Count[s[l] - ord('a')]:
+                matchCount -= 1
+
+            # now update the l pointer
+            l += 1
+            
+        return matchCount == 26
 
