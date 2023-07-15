@@ -14,7 +14,7 @@ class Solution:
         need, have = len(countT), 0
         # res is initially set to -1, -1 because the left and right pointers have not been set yet for the min substring, 
         # and resLen should be infinity as we look for the minvalue.
-        res, resLen = [-1, -1], float("inf")
+        res, resLen = [-1, -1], float("infinity")
 
         l = 0
         for r in range(len(s)):
@@ -24,6 +24,12 @@ class Solution:
                 have += 1
 
             while need == have:
+                # check if the current window is smallest 
+                if (r - l + 1) < resLen:
+                    res = [l, r]
+                    resLen = (r - l + 1)
+
+                # decrement the number of times the character appears in the window
                 countS[s[l]] -= 1 
                 
                 # also need to update have -> check if it was a duplicate, then have does not need to be updated.
@@ -31,3 +37,7 @@ class Solution:
                     have -= 1
 
                 l += 1
+            
+        l, r = res
+        return s[l : r + 1] if resLen != float("infinity") else ""
+            
