@@ -24,4 +24,10 @@ class Solution:
                 have += 1
 
             while need == have:
+                countS[s[l]] -= 1 
                 
+                # also need to update have -> check if it was a duplicate, then have does not need to be updated.
+                if s[l] in countT and countS[s[l]] < countT[s[l]]:
+                    have -= 1
+
+                l += 1
