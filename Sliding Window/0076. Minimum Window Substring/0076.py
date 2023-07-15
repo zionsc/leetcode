@@ -38,6 +38,7 @@ class Solution:
 
                 l += 1
             
+        # update l and r pointers to what was saved as the optimized [l, r] in res
         l, r = res
         return s[l : r + 1] if resLen != float("infinity") else ""
             
