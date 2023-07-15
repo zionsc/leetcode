@@ -21,3 +21,7 @@ class Solution:
             countS = 1 + countS.get(s[r], 0)
             # need to check if s[r] is even in T first because otherwise it will not be able to check if it is just nullptr
             if s[r] in countT and countS[s[r]] == countT[s[r]]:
+                have += 1
+
+            while need == have:
+                
