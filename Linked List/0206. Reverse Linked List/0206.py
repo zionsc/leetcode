@@ -19,6 +19,6 @@ class Solution:
 
         # basically making sure that our current pointer does not point to the original next value (we must delete old next pointers as well)
         head.next = None
-        # the head of the new linked list
+        # the head of the new linked list as newHead stays as the last value
         return newHead
 
