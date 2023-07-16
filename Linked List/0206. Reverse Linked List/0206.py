@@ -17,3 +17,7 @@ class Solution:
             # make head's next value point point to itself, essentially reversing that part of the linked list
             head.next.next = head
 
+        # basically making sure that our current pointer does not point to the original next value (we must delete old next pointers as well)
+        head.next = None
+        return newHead
+
