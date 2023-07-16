@@ -17,4 +17,11 @@ class Solution:
             # now add to the position in the queue that it should be in to be considered "next-in-line" to be the max (or it already is if there is no next)
             q.append(r)
 
+            # if q[0] is has now been removed from consideration (no longer in the sliding window!) -> because q holds the indexes, if l > q[0] that means we passed 
+            # the previous max value -> the new window cannot have that max as the value anymore. 
+            if l > q[0]:
+                q.popleft()
+
+            output.append(q[-1])
+
 
