@@ -53,3 +53,4 @@ SLIDING WINDOW: WHILE loop to check something with l and r pointers!
 
 LINKED LIST: recurisve and iterative
 0206. Reverse Linked List: Can solve iterative and recursively. Iterative is very easy, just have a prev, and curr pointer use temp and curr and prev and curr.next pointer and use basic logic to bump them around while curr: . -> recursive basically: keep track of the last value in the linkedList as newHead = self.reverseList(head.next) and then change the pointer to reverese by doing head.next.next = head all under if head.next:. then after that if, just make sure head.next points to nothing in order to remove the old pointer arrow, then return newHead (since we made sure to not change that after the last value in the linkedList if it is 1,2,3,4,5 -> then it was kept at 5 the whole time!)
+0021. Merge Two Sorted Lists
