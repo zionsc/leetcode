@@ -17,6 +17,7 @@ class Solution:
         # remove the nth node set l.next to the next.next value
         l.next = l.next.next
 
+        # dummy.next is head
         return dummy.next
 
         
