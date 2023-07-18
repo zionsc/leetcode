@@ -11,3 +11,5 @@ class Solution:
         # second half of the list starts at slow.next and then slow should point to nullptr in order to separate the lists -> this all works with pointers
         secondHalf = slow.next
         slow.next = None
+
+        # step two: reverse the second half of the list in order to iterate through the second half of the list backwards! 
