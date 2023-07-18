@@ -22,4 +22,11 @@ class Solution:
 
         # step three: merge the the separated lists into one!
         firstHalf = head
+        secondHalf = prev # make it the start of the secondHalf
         while firstHalf and secondHalf:
+            tmp1, tmp2 = firstHalf.next, secondHalf.next # keep these in a pointer because we need to access them after we change the pointers
+            firstHalf.next = secondHalf
+            secondHalf.next = tmp1
+            firstHalf, secondHalf = tmp1, tmp2
+        
+        
