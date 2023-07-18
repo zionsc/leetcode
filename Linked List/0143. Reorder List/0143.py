@@ -13,3 +13,11 @@ class Solution:
         slow.next = None
 
         # step two: reverse the second half of the list in order to iterate through the second half of the list backwards! 
+        prev = None
+        while secondHalf:
+            temp = secondHalf.next
+            secondHalf.next = prev
+            prev = secondHalf
+            secondHalf = temp
+
+        
