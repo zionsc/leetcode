@@ -7,4 +7,6 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
         
-        
+
+        secondHalf = slow.next
+        slow.next = None
