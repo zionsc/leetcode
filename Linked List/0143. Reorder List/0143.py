@@ -8,5 +8,6 @@ class Solution:
             fast = fast.next.next
         
 
+        # second half of the list starts at slow.next and then slow should point to nullptr in order to separate the lists -> this all works with pointers
         secondHalf = slow.next
         slow.next = None
