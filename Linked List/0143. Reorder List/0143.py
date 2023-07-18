@@ -20,4 +20,6 @@ class Solution:
             prev = secondHalf
             secondHalf = temp
 
-        
+        # step three: merge the the separated lists into one!
+        firstHalf = head
+        while firstHalf and secondHalf:
