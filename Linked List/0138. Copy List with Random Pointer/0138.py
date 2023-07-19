@@ -21,4 +21,11 @@ class Solution:
 
         # second iteration, to map the pointers in the deep copy
         curr = head
-        while curr
+        while curr:
+            copy = oldToCopy[curr]
+            copy.next = oldToCopy[curr.next]
+            copy.random = oldToCopy[curr.random]
+            curr = curr.next
+
+        # return the deep copy version of head
+        return oldToCopy[head]
