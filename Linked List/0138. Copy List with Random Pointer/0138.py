@@ -16,4 +16,7 @@ class Solution:
         curr = head
         while curr:
             copy = Node(curr.val)
-            oldToCopy[curr] 
+            oldToCopy[curr] = copy
+            curr = curr.next
+
+        while 
