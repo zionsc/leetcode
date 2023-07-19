@@ -18,8 +18,8 @@ class Solution:
             val = v1 + v2 + carry
 
             # update our val in order to make sure it doesnt go over 10 -> else carry!
-            carry = val % 10
-            val = val // 10
+            carry = val // 10
+            val = val & 10
 
             # create the val!
             curr.next = ListNode(val)
