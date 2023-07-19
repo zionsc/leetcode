@@ -21,7 +21,15 @@ class Solution:
             carry = val % 10
             val = val // 10
 
+            # create the val!
+            curr.next = ListNode(val)
 
+            # update our pointers
+            curr = curr.next
+            l1 = l1.next if l1 else None # if l1 does not exist, make it null so in the next iteration,
+            # v1 becomes 0
+            l2 = l2.next if l2 else None # if l2 does not exist, make it null so in the next iteration,
+            # v2 becomes 0 
 
         
         return dummy.next
