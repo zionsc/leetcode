@@ -19,4 +19,6 @@ class Solution:
             oldToCopy[curr] = copy
             curr = curr.next
 
-        while 
+        # second iteration, to map the pointers in the deep copy
+        curr = head
+        while curr
