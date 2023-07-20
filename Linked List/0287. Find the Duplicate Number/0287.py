@@ -19,4 +19,8 @@ class Solution:
         
 
         # step 2: find the duplicate by taking one step at a time from c-x and p.
-        
+        slow2 = 0
+        while True:
+            # distance from start -> start of cycle == cycle detection -> start of cycle
+            slow = nums[slow]
+            slow2 = nums[slow2]
