@@ -25,3 +25,6 @@ class Solution:
             # distance from start -> start of cycle == cycle detection -> start of cycle
             slow = nums[slow]
             slow2 = nums[slow2]
+            if slow == slow2:
+                return slow
+        
