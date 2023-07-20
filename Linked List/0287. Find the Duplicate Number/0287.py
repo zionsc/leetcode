@@ -19,6 +19,7 @@ class Solution:
         
 
         # step 2: find the duplicate by taking one step at a time from c-x and p.
+        # they will both eventually go into the start of the cycle. -> because literally they have to
         slow2 = 0
         while True:
             # distance from start -> start of cycle == cycle detection -> start of cycle
