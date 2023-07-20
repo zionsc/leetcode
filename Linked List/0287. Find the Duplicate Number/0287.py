@@ -7,3 +7,9 @@ class Solution:
         # algorithm found to the start of the cycle is the same, thus meaning that if they both take one step at
         # a time, then they will both point to the start of the cycle at the same time, meaning that they will be
         # duplicate numbers at different indexes (since they point to the same index) 
+
+        # step 1: cycle detection
+        slow, fast = 0, 0
+        while True:
+            slow = nums[slow] # taking one step at a time
+            fast = nums[nums[fast]] # taking two steps at once
