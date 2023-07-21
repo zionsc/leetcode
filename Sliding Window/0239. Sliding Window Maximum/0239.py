@@ -28,7 +28,7 @@ class Solution:
 
             # step 3: now update the output only if it is a valid sliding window (only at the start a few times until the window gets to the size of k)
             if  (r + 1) >= k:
-                output.append(nums[q[-1]])
+                output.append(nums[q[0]])
                 # only in this case do we update the left pointer as we need the r - l + 1 (window length) to be the correct length before we continue
                 l += 1
             r += 1
