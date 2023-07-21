@@ -14,7 +14,9 @@ class ListNode:
 class LRUCache:
     def __init__(self, capacity: int):
         # implement
-        pass
+        self.cache = {}
+        # basically left and right are going to pointers to the dummy nodes that start and finish the linkedlist.
+        self.left, self.right = ListNode(0, 0), ListNode(0, 0) # initialize the dummy nodes for left and right
 
 
     # to insert into the linkedList
