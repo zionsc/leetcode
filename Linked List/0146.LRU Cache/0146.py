@@ -50,6 +50,12 @@ class LRUCache:
         if len(self.cache) > self.cap:
             # since self.left is the dummynode -> next is the LRU
             lru = self.left.next
+
+            # remove from linkedlist
+            self.remove(lru) # or self.remove(self.cache[lru.key]) -> does the same thing:
+            # accessing linkedlist directly, or accessing linkedlist through the hashmap (cache)
+
+            # remove from hashmap
             # each node has a key that maps to the hashmap
             del self.cache[lru.key]
             
