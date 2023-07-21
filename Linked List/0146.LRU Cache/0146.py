@@ -37,7 +37,9 @@ class LRUCache:
     
     # to remove from the linkedlist
     def remove(self, node):
+        prev, next = self.left, self.left.next
 
+        # updating the linked list pointers
 
 
 
