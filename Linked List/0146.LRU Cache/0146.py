@@ -7,6 +7,8 @@
 class ListNode:
     # the reason for key value is to make sure that we can access the hashmap from the node itself.
     def __init__(self, key, value):  
+        self.key, self.val = key, value
+        self.next = self.prev = None
 
 
 class LRUCache:
