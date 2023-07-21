@@ -15,6 +15,7 @@ class LRUCache:
     def __init__(self, capacity: int):
         # cache will hold keys that point to nodes -> linkedlist
         self.cache = {}
+        self.cap = capacity
         # basically left and right are going to pointers to the dummy nodes that start and finish the linkedlist.
         self.left, self.right = ListNode(0, 0), ListNode(0, 0) # initialize the dummy nodes for left and right
         self.left.next = self.right
@@ -43,3 +44,9 @@ class LRUCache:
         self.insert(self.cache[key])
         # updates the value to the new listNode -> else creates it and puts it in
         self.cache[key] = ListNode(key, value)
+
+        # must also check if it is larger than the cache -> if it is, then remove LRU
+        if len(self.cache) > self.cap:
+            # since self.left is the dummynode -> next is the LRU
+            lru = self.left.next
+            
