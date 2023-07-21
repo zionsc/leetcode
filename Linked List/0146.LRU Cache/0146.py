@@ -38,4 +38,8 @@ class LRUCache:
 
     def put(self, key: int, value: int) -> None:
         # implement
-        pass
+        if key in self.cache:
+            self.remove(self.cache[key])
+        self.insert(self.cache[key])
+        # updates the value to the new listNode -> else creates it and puts it in
+        self.cache[key] = ListNode(key, value)
