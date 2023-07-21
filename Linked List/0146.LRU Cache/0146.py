@@ -16,6 +16,14 @@ class LRUCache:
         # implement
         pass
 
+
+    # to insert into the linkedList
+    def insert(self, node):
+    
+    # to remove from the linkedlist
+    def remove(self, node):
+
+
     def get(self, key: int) -> int:
         # implement
         pass
