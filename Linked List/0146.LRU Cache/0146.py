@@ -42,11 +42,14 @@ class LRUCache:
         if key in self.cache:
             self.remove(self.cache[key])
         self.insert(self.cache[key])
-        # updates the value to the new listNode -> else creates it and puts it in
+        # updates the value to the new listNode -> else creates it and puts it in -> maps the key to the node's key
+        # in order to access hashmap in O(1)
         self.cache[key] = ListNode(key, value)
 
         # must also check if it is larger than the cache -> if it is, then remove LRU
         if len(self.cache) > self.cap:
             # since self.left is the dummynode -> next is the LRU
             lru = self.left.next
+            # each node has a key that maps to the hashmap
+            del self.cache[lru.key]
             
