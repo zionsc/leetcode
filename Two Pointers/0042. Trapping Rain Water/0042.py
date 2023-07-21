@@ -26,4 +26,4 @@ class Solution:
                 maxRight = max(maxRight, height[r])
                 res += maxRight - height[r]
             
-            return res
+        return res
