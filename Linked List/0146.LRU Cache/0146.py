@@ -30,7 +30,10 @@ class LRUCache:
 
     def get(self, key: int) -> int:
         # implement
-        pass
+        if key in self.cache: # must use self.remove if calling class function inside of funct.
+            self.remove()
+            return self.cache[key]
+        return -1
 
     def put(self, key: int, value: int) -> None:
         # implement
