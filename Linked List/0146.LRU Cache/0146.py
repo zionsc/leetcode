@@ -40,6 +40,11 @@ class LRUCache:
         prev, next = self.left, self.left.next
 
         # updating the linked list pointers
+        prev.next = node
+        next.prev = node
+
+        node.next = next
+        node.prev = prev
 
 
 
