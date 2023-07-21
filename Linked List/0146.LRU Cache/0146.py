@@ -27,6 +27,8 @@ class LRUCache:
         # adding to the prev of self.right (since self.right is a dummy node, the one prev to it is the MRU)
         # MRU -> most recently used key in cache (listnode)
         prev, next = self.right.prev, self.right
+
+        # updaing the linked list pointers! 
         prev.next = node
         next.prev = node
         node.next = self.right
@@ -35,6 +37,8 @@ class LRUCache:
     
     # to remove from the linkedlist
     def remove(self, node):
+
+
 
 
     def get(self, key: int) -> int:
