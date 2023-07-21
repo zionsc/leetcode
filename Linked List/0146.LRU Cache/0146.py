@@ -13,7 +13,7 @@ class ListNode:
 
 class LRUCache:
     def __init__(self, capacity: int):
-        # implement
+        # cache will hold keys that point to nodes -> linkedlist
         self.cache = {}
         # basically left and right are going to pointers to the dummy nodes that start and finish the linkedlist.
         self.left, self.right = ListNode(0, 0), ListNode(0, 0) # initialize the dummy nodes for left and right
@@ -31,7 +31,8 @@ class LRUCache:
     def get(self, key: int) -> int:
         # implement
         if key in self.cache: # must use self.remove if calling class function inside of funct.
-            self.remove()
+            self.remove(self.cache[key])
+            self.insert(self.cache[key])
             return self.cache[key]
         return -1
 
