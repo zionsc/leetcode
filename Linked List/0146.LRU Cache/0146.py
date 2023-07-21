@@ -24,6 +24,9 @@ class LRUCache:
 
     # to insert into the linkedList
     def insert(self, node):
+        # adding to the prev of self.right (since self.right is a dummy node, the one prev to it is the MRU)
+        # MRU -> most recently used key in cache (listnode)
+        prev, next = self.right.prev, self.right
     
     # to remove from the linkedlist
     def remove(self, node):
