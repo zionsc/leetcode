@@ -42,6 +42,9 @@ class Solution:
 
             # we must also update groupPrev for the next iteration of group -> it was the start node of the group 
             # before being reversed
+
+            # basically this step is to update the pointers of the nodes around the group after it has been
+            # reversed
             temp = groupPrev.next
             groupPrev.next = kth
             groupPrev = groupPrev.next
