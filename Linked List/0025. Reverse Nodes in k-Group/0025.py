@@ -46,6 +46,9 @@ class Solution:
             groupPrev.next = kth
             groupPrev = groupPrev.next
 
+
+        return dummy.next
+
             
     
     def findKth(self, currNode, k):
