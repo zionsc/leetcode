@@ -36,8 +36,15 @@ class Solution:
                 prev = curr
                 curr = temp
             
+
             # now we must connect the new end of the linkedlist to the next node after the group in the linkedlist
             # in order to maintain a connected linkedlist
+
+            # we must also update groupPrev for the next iteration of group -> it was the start node of the group 
+            # before being reversed
+            temp = groupPrev.next
+            groupPrev.next = kth
+            groupPrev = groupPrev.next
 
             
     
