@@ -26,6 +26,11 @@ class Solution:
 
 
             # reverse the group
+            # in order to reverse the group, but still keep it connected, we must set prev to something other
+            # than None
+            prev, curr = kth.next, groupPrev.next
+            # can't do while curr != None because we are reversing groups, but the entire linkedlist at once.
+            while curr != groupNext:
 
             
     
