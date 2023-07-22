@@ -15,6 +15,12 @@ class Solution:
         groupPrev = dummy
 
         while True:
+            kth = self.findKth(groupPrev.next, k)
+
+            # if kth is out of bounds -> nothing happens
+            if not kth:
+                break
+        
             
     
     def findKth(self, currNode, k):
