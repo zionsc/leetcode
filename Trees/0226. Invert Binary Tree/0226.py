@@ -6,4 +6,9 @@
 #         self.right = right
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        # Can do pre-order or post-order traversal for this, but I like post-order because it makes sense
+
+        if not root:
+            return None
+
         
