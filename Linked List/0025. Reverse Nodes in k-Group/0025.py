@@ -31,6 +31,13 @@ class Solution:
             prev, curr = kth.next, groupPrev.next
             # can't do while curr != None because we are reversing groups, but the entire linkedlist at once.
             while curr != groupNext:
+                temp = curr.next
+                curr.next = prev
+                prev = curr
+                curr = temp
+            
+            # now we must connect the new end of the linkedlist to the next node after the group in the linkedlist
+            # in order to maintain a connected linkedlist
 
             
     
