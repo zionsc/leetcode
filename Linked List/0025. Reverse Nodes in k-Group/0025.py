@@ -14,4 +14,12 @@ class Solution:
         # in order to continue the linkedlist
         groupPrev = dummy
 
-        
+        while True:
+            
+    
+    def findKth(self, currNode, k):
+        # find the kth node -> easy
+        while currNode and k > 0:
+            currNode = currNode.next
+            k -= 1
+        return currNode
