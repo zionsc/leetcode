@@ -67,3 +67,4 @@ for each put and get, we must update the LRU linkedlist because then we have acc
 
 
 TREES:
+0226. Invert Binary Tree: Can use pre-order or post-order for this, but I like to use post-order as it makes more sense to me. -> basically check the case if root is None because if it is, we can simply return None as the binarytree is empty. self.invertTree(root.left), self.invertTree(root.right), and then simply just do root.left, root.right = root.right, root.left and return root -> this does head recursion (backwards recursion) and it is very intuitive (post-order traversal)
