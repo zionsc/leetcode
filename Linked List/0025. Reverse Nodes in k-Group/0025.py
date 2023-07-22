@@ -20,7 +20,13 @@ class Solution:
             # if kth is out of bounds -> nothing happens
             if not kth:
                 break
-        
+            
+            # keep track of node: before the group and after the group
+            groupNext = kth.next
+
+
+            # reverse the group
+
             
     
     def findKth(self, currNode, k):
