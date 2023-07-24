@@ -24,9 +24,11 @@ class Solution:
             left = dfs(root.left)
             right = dfs(root.right)
 
+            # need to use heights to calc diameter 
             diameter = max(diameter, left + right)
 
-            return 1 + left + right
+            # return the heights
+            return 1 + max(left + right)
     
         dfs(root)
         return diameter
