@@ -7,3 +7,9 @@
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         # must keep track of a height and a bool to check if node is balanced -> children must be balanced as well
+
+        def dfs(root):
+            if not root:
+                return [0, True]
+            
+            
