@@ -9,3 +9,6 @@ class Solution:
         # must do pre-order because we have to check then iterate because 
         if not q and not p:
             return False
+        
+        # pre-order traversal because any other method will not iterate left and right in the same
+        # speed -> whatever is recursively declared first would go first. 
