@@ -12,3 +12,8 @@ class Solution:
         
         # pre-order traversal because any other method will not iterate left and right in the same
         # speed -> whatever is recursively declared first would go first. 
+        if q and p and q.val == p.val:
+            return self.isSameTree(p.left, q.left) and self.isSaemTree(p.right, q.right)
+    
+        else:
+            return False
