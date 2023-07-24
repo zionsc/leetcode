@@ -18,3 +18,11 @@ class Solution:
             # to say that it is a global function
             nonlocal diameter
 
+            if not root:
+                return 0
+
+            left = dfs(root.left)
+            right = dfs(root.right)
+
+            
+
