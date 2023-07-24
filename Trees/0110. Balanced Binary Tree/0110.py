@@ -12,4 +12,7 @@ class Solution:
             if not root:
                 return [0, True]
             
+            left = dfs(root.left)
+            right = dfs(root.right)
+
             
