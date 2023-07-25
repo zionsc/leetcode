@@ -13,7 +13,7 @@ class Solution:
         while curr:
             if curr.val > p.val and curr.val > q.val: # switch curr to curr.left because both p and q fall under curr.left as the ancestor
                 curr = curr.left
-            elif curr.val < p.val and curr.val < q.val:
+            elif curr.val < p.val and curr.val < q.val: # switch curr to curr.right because p and q fall under curr.right as the ancestor
                 curr = curr.right
             else:
                 return curr
