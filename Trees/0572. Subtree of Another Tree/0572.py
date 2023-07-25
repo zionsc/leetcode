@@ -6,6 +6,13 @@
 #         self.right = right
 class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        # if subRoot is empty, regardless of root, it will always be a valid component of a subtree
+        if not subRoot:
+            return True
+        # if not subRoot didn't catch, it means subRoot is empty, but if root is empty and subRoot exists, it is not valid.
+        if not root:
+            return False
+        
 
     
     # define a helperfucnt to help determine if this is the same subtree!
