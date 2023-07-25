@@ -12,6 +12,11 @@ class Solution:
         # if not subRoot didn't catch, it means subRoot is empty, but if root is empty and subRoot exists, it is not valid.
         if not root:
             return False
+    
+        if self.sameTree(root, subRoot):
+            return True
+    
+        return self.isSubtree() or self.isSubtree()
         
 
     
