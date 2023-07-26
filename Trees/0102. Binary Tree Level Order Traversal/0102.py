@@ -15,4 +15,15 @@ class Solution:
         q.append(root)
 
         while q:
-            
+            level = []
+            for i in range(len(q)):
+                node = q.popleft()
+                if node:
+                    level.append(node.val)
+                    q.append(node.left)
+                    q.append(node.right)
+            # edge cases to check if level is just null
+            if level:
+                res.append(level)
+
+        return res
