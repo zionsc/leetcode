@@ -13,3 +13,7 @@ class Solution:
         while q: # level-order traversal
             for i in range(len(q)): # per level
                 node = q.popleft() # pop LEFT! -> pops until most very right (which is our rightmost node at that level)
+                if node:
+                    # order of append is important to make sure right is the rightmode in the q not the leftmost!
+                    q.append(node.left)
+                    q.append(node.right)
