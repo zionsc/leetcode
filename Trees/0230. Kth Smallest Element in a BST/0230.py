@@ -37,12 +37,11 @@ class Solution:
 
         while stack or curr:
             while curr:
+                stack.append(curr)
                 curr = curr.left
-                stack.append(curr.left)
 
             curr = stack.pop()
-            n += 1
             
-            if n == k:
-                return curr
+            if k == 0:
+                return curr.val
             curr = curr.right
