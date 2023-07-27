@@ -20,3 +20,10 @@ class Solution:
                 res += 1
                 currMax = root.val
             
+            dfs(root.left, currMax)
+            dfs(root.right, currMax)
+
+        dfs(root.left, currMax)
+        dfs(root.right, currMax)
+    
+        return res
