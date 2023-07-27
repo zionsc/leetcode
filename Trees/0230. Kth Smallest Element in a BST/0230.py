@@ -32,9 +32,17 @@ class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         # iterative -> go left until possible, when return back, pop from stack -> go right when you can't go left -> n+=1
         # when n == k: return node.val
-        stack []
+        stack = []
         curr = root
 
         while stack or curr:
             while curr:
-                
+                curr = curr.left
+                stack.append(curr.left)
+
+            curr = stack.pop()
+            n += 1
+            
+            if n == k:
+                return curr
+            curr = curr.right
