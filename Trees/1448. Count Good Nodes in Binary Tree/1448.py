@@ -8,6 +8,7 @@ class Solution:
     def goodNodes(self, root: TreeNode) -> int:
         # can use DFS, keep track of a maximum in each iteration
         res = 1 # since curr is always a "good" node
+        currMax = root.val
 
         def dfs(root, currMax):
-            
+            nonlocal res # because res is a global variable
