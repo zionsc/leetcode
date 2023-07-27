@@ -12,3 +12,11 @@ class Solution:
 
         def dfs(root, currMax):
             nonlocal res # because res is a global variable
+            # base case
+            if not root:
+                return
+
+            if root.val >= currMax:
+                res += 1
+                currMax = root.val
+            
