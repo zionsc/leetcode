@@ -7,3 +7,11 @@
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         # bst must also maintain an upper & lower bound --> I did not know this but make sure to know this
+        def dfs(node, lowerBound, upperBound):
+            if not node:
+                return True
+            if not (lowerBound < node.val < upperBound):
+                return False
+            return dfs(node.left, lowerBound, node.val) and dfs(node.right, node.val, upperBound)
+        
+        return dfs(root, float("-inf", float("inf")))
