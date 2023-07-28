@@ -15,7 +15,8 @@ class Solution:
 
         # treat them as having the values in the same list of indexes, but in different order. so we must cut in 
         # same place for each array.
-        root.left = buildTree(preorder[1:mid + 1], inorder[:mid])
+        root.left = buildTree(preorder[1:mid + 1], inorder[:mid]) # need to do preorder[1:mid + 1] as the entire left subtree is from 1 to mid 
+        # [inclusive:exclusive] -> because the general area from 0 to mid is contains the same nodes, but in different order.
         root.right = buildTree(preorder[mid + 1:], inorder[mid + 1:])
 
         return root
