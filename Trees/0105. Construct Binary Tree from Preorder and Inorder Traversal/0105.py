@@ -13,7 +13,9 @@ class Solution:
         root = TreeNode(preorder[0])
         mid = inorder.index(preorder[0]) # returns the index of that value in inorder array
 
-        root.left = buildTree(preorder[], inorder[])
-        root.right = buildTree(preorder[0], inorder[0])
+        # treat them as having the values in the same list of indexes, but in different order. so we must cut in 
+        # same place for each array.
+        root.left = buildTree(preorder[1:mid + 1], inorder[:mid])
+        root.right = buildTree(preorder[mid + 1:], inorder[mid + 1:])
 
         return root
