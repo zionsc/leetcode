@@ -25,4 +25,19 @@ class Codec:
         # creating a list from the string again
         vals = data.split(",")
 
-        
+        # create a global variable that is a part of the class in order to make sure to keep track of the 
+        # iteration that we are on -> we cannot make it non-global because then it would reset.
+        self.i = 0
+
+        def dfs():
+            if vals[self.i] == "N":
+                self.i += 1
+                return None
+            # else if it not nullptr
+            node = TreeNode(int(vals[self.i]))
+            node.left = dfs()
+            node.right = dfs()
+            return node
+
+        root = dfs()
+        return root
