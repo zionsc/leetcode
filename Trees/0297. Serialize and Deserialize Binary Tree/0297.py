@@ -22,3 +22,7 @@ class Codec:
         return ",".join(res)
 
     def deserialize(self, data):
+        # creating a list from the string again
+        vals = data.split(",")
+
+        
