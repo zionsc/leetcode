@@ -35,6 +35,7 @@ class Codec:
                 return None
             # else if it not nullptr
             node = TreeNode(int(vals[self.i]))
+            self.i += 1
             node.left = dfs()
             node.right = dfs()
             return node
