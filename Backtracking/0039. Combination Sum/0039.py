@@ -14,10 +14,9 @@ class Solution:
             # we do include our current ith index!
             currSubset.append(candidates[i])
             dfs(i, currSubset, currSum + candidates[i])
-
+            currSubset.pop() # to remove whatever we just added -> to clean up the recursive tree that we went down
 
             # we do not include our current ith index!
-            currSubset.pop() # to remove whatever we just added
             dfs(i, currSubset, currSum)
 
         dfs(0, [], 0)
