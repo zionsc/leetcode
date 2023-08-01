@@ -5,3 +5,8 @@ class Solution:
         subset = [] # global subset so we can keep track of the current recursive step
 
         def dfs(i): # i keeps track of the index that we are currently at in nums[i]
+            # if i has gone out of bounds, we must add it to res since we went through all possible steps
+            if i >= len(nums):
+                res.append(subset)
+                return
+            
