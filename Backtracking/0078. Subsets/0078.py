@@ -9,4 +9,12 @@ class Solution:
             if i >= len(nums):
                 res.append(subset)
                 return
+        
+            # decision to add current nums[i]
+            subset.append(nums[i])
+            dfs(i + 1)
+
+            # decision to NOT add current nums[i]
+            subset.pop() # must remove the one that we just added 
+            dfs(i + 1)
             
