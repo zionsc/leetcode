@@ -17,3 +17,8 @@ class Solution:
 
 
             # we do not include our current ith index!
+            currSubset.pop() # to remove whatever we just added
+            dfs(i, currSubset, currSum)
+
+        dfs(0, [], 0)
+        return res
