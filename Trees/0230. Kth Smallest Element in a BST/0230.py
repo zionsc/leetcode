@@ -41,6 +41,7 @@ class Solution:
                 curr = curr.left
 
             curr = stack.pop()
+            k -= 1  
             
             if k == 0:
                 return curr.val
