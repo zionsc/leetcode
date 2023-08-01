@@ -17,4 +17,8 @@ class Solution:
             # decision to NOT add current nums[i]
             subset.pop() # must remove the one that we just added 
             dfs(i + 1)
+
+
+        dfs(0)
+        return res
             
