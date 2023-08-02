@@ -18,3 +18,9 @@ class Solution:
             # decision to NOT include nums[i]
             # must iterate i until it is not a number that has already been done -> because duplicate numbers 
             # will cause duplicate recursive trees
+            while i + 1 < len(nums) and nums[i] == nums[i + 1]:
+                i += 1
+            backtrack(i + 1, subset)
+
+        backtrack(0, [])
+        return res
