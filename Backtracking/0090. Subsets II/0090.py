@@ -7,4 +7,8 @@ class Solution:
 
         def backtrack(i, subset):
             if i == len(nums):
-                
+                res.append(nums.copy())
+                return
+        
+            # decision to INCLUDE nums[i]
+            
