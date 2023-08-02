@@ -7,8 +7,14 @@ class Solution:
 
         def backtrack(i, subset):
             if i == len(nums):
-                res.append(nums.copy())
+                res.append(subset.copy())
                 return
         
             # decision to INCLUDE nums[i]
-            
+            subset.append(nums[i])
+            backtrack(i + 1, subset)
+            subset.pop()
+
+            # decision to NOT include nums[i]
+            # must iterate i until it is not a number that has already been done -> because duplicate numbers 
+            # will cause duplicate recursive trees
