@@ -12,3 +12,4 @@ class Solution:
             for j in range(i, len(s)): # check all from 0 to the end in order to see palindrome
                 if self.isPalindrome(s, i, j):
                     currPartition.append(s[i:j+1]) # j + 1 because inclusive:exclusive, so to include j.
+                    dfs(j + 1) # call this to check all the values between j and the end as well! -> palindromes could be inside
