@@ -20,6 +20,7 @@ class Solution:
                 i += 1
             backtrack(i + 1, currSubset, currSum)
 
-        
+        backtrack(0, [], 0)
+        return res
 
 
