@@ -15,4 +15,11 @@ class Solution:
             backtrack(i + 1, currSubset, currSum + candidates[i])
             currSubset.pop() # to clean up that recursive subtree
 
+            # decision to not add candidate[i], must skip duplicates, this is why we sorted the array first
+            while i < len(candidates) and candidates[i] == candidates[i + 1]:
+                i += 1
+            backtrack(i + 1, currSubset, currSum)
+
+        
+
 
