@@ -11,6 +11,8 @@ class Solution:
                 return
 
             # decision to add candidates[i]
-            
+            currSubset.append(candidates[i])
+            backtrack(i + 1, currSubset, currSum + candidates[i])
+            currSubset.pop() # to clean up that recursive subtree
 
 
