@@ -13,3 +13,4 @@ class Solution:
                 if self.isPalindrome(s, i, j):
                     currPartition.append(s[i:j+1]) # j + 1 because inclusive:exclusive, so to include j.
                     dfs(j + 1) # call this to check all the values between j and the end as well! -> palindromes could be inside
+                    currPartition.pop() # clean up this recursive tree for the next iteration
