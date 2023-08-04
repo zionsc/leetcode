@@ -14,4 +14,13 @@ class Solution:
 
         def backtrack(i, currStr):
             if len(currStr) == len(digits):
-                
+                res.append(currStr)
+                return
+            
+            for c in digitToChar[digit[i]]:
+                backtrack(i + 1, currStr + c)
+
+        if digits: # if digits is not empty
+            backtrack(0, "")
+        return res
+
