@@ -10,3 +10,4 @@ class Solution:
 
         def backtrack(r):
             if r == n: # when we iterate through all the rows
+                copy = ["".join(row) for row in board]
