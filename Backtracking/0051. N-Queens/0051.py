@@ -7,3 +7,6 @@ class Solution:
 
         res = []
         board =[["."] * n for i in range(n)] # n x for i in range(n) (cols)
+
+        def backtrack(r):
+            if r == n: # 
