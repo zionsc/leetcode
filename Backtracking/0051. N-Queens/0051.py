@@ -9,4 +9,4 @@ class Solution:
         board =[["."] * n for i in range(n)] # n x for i in range(n) (cols)
 
         def backtrack(r):
-            if r == n: # 
+            if r == n: # when we iterate through all the rows
