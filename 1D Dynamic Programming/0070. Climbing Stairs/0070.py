@@ -17,3 +17,15 @@ class Solution:
 # optimized DP approach with sliding window
 class Solution:
     def climbStairs(self, n: int) -> int:
+        if n <= 3:
+            return n
+
+        one, two = 1, 1
+
+        for i in range(n-3, -1, -1):
+            temp = one
+            one = one + two
+            two = one
+        
+        return one
+            
