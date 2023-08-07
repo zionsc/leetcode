@@ -1,3 +1,4 @@
+# classic DP approach with aray
 class Solution:
     def climbStairs(self, n: int) -> int:
         if n <= 3:
@@ -12,3 +13,7 @@ class Solution:
             dp[i] = dp[i + 1] + dp[i + 2]
 
         return dp[0]
+    
+# optimized DP approach with sliding window
+class Solution:
+    def climbStairs(self, n: int) -> int:
