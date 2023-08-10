@@ -8,4 +8,9 @@ class Solution:
         # [rob1, rob2, n, n+1, ...] -> logic works because no numbers are negative
         for n in nums:
             temp = max(rob1 + n, rob2)
+            # now iterate to the next numbers -> update pointers
+            rob1 = rob2
+            rob2 = temp
+        return rob2
+
             
