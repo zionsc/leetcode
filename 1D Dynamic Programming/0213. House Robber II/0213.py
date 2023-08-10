@@ -5,4 +5,7 @@ class Solution:
 
     def helper(self, nums):
         rob1, rob2 = 0, 0
-        # [rob1, rob2, n, n+1, ...]
+        # [rob1, rob2, n, n+1, ...] -> logic works because no numbers are negative
+        for n in nums:
+            temp = max(rob1 + n, rob2)
+            
