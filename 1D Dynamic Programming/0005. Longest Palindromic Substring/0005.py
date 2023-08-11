@@ -26,3 +26,7 @@ class Solution:
                     resLen = r - l + 1
                     res = s[l:r + 1]
                     # expand outwards with the start location still being at i and i + 1 (since it is even)
+                    l -= 1
+                    r += 1
+
+        return res
