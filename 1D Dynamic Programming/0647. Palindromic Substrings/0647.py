@@ -4,6 +4,8 @@ class Solution:
         for i in range(len(s)):
             res += self.isPalindrome(s, i, i) # odd cases where an exact middle exists (where l = r = middle)
             res += self.isPalindrome(s, i, i + 1) # even cases where an exact middle does not exist
+        
+        return res
 
     
     def isPalindrome(self, s, l, r):
