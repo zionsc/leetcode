@@ -9,3 +9,4 @@ class Solution:
                     dp[a] = min(dp[a], 1 + dp[a - c]) # recurrence relation
 
         return dp[amount] if dp[amount] != amount + 1 else -1 
+    # basically searching through all the coins and building up the solution from 0 -> amount for each dp[amount]
