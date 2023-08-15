@@ -5,3 +5,4 @@ class Solution:
 
         for i in range(len(s) - 1, -1, -1):
             for w in wordDict:
+                
