@@ -8,3 +8,8 @@ class Solution:
             if n == 0:
                 currMin, currMax = 1, 1 # re-update currMin and currMax to be 1, 1 because we are looking for
                                         # subarrays, meaning it must reset at that point again to start a new sequence
+                continue
+        
+            temp = currMax
+            currMax = max(n * currMax, n * currMin, n)
+            currMin = min(n * temp, n * currMin, n)
