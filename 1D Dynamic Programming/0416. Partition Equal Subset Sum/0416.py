@@ -14,4 +14,4 @@ class Solution:
                 newDP.add(i + t)
             dp = newDP
         
-        return 
+        return True if target in dp else False
