@@ -6,7 +6,9 @@ class Solution:
         # basically we want to iterate through each [row][col] to see if it has been marked by bfs
         rows, cols = len(grid), len(grid[0])
         visited = set()
+        numIslands = 0
 
+        # basic BFS
         def bfs(r, c):
             queue = collections.deque()
             queue.append((r, c))
@@ -20,4 +22,12 @@ class Solution:
                         visited.add((row + dr, col + dc))
                         queue.append((row + dr, col + dc))
         
-        
+
+        # now check each possible [row][col]
+        for r in range(rows):
+            for c in range(cols):
+                if (r, c) not in visited and grid[r][c] == "1":
+                    bfs(r, c)
+                    numIslands += 1
+
+        return numIslands
