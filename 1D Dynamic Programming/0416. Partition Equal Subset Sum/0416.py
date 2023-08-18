@@ -11,7 +11,7 @@ class Solution:
         for i in range(len(nums) - 1, -1, -1):
             newDP = dp.copy()
             for t in dp: # if at any point, the target comes up, it is possible to partition them!
-                newDP.add(i + t)
+                newDP.add(t + nums[i])
             dp = newDP
         
         return True if target in dp else False
