@@ -23,6 +23,7 @@ class Solution:
             oldToNew[node] = copy
 
             for neigh in neighbors:
+                # recursive leap of faith
                 copy.neighbors.append(dfs(neigh))
 
             return copy
