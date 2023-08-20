@@ -9,3 +9,24 @@ class Node:
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
         oldToNew = {}
+
+        def dfs(node):
+            if not node:
+                return
+            
+            # if already has been copied, no need to make a new copy
+            if node in oldToNew:
+                return oldToNew[node]
+            
+            # create a copy
+            copy = Node(node.val)
+            oldToNew[node] = copy
+
+            for neigh in neighbors:
+                copy.neighbors.append(dfs(neigh))
+
+            return copy
+        
+        newNode = dfs(node)
+        return newNode
+            
