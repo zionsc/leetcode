@@ -20,5 +20,11 @@ class Solution:
             for dr, dc in directions:
                 dfs(r + dr, c + dc)
 
-        
-        
+        for r in range(rows):
+            for c in range(cols):
+                if (r, c) not in discovered and grid[r][c] == 1:
+                    currArea = 0
+                    dfs(r, c)
+
+
+        return maxArea
