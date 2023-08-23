@@ -3,4 +3,5 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
-        
+        rows, cols = len(board), len(board[0])
+        visitSet = set()
