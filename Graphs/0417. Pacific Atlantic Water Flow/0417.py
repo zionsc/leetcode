@@ -17,3 +17,18 @@ class Solution:
             dfs(r - 1, c, visitSet, heights[r][c])
             dfs(r, c + 1, visitSet, heights[r][c])
             dfs(r, c - 1, visitSet, heights[r][c])
+
+        
+        # top and bottom row -> borders pacific (top), borders atlantic (bottom)
+        for c in range(cols):
+            dfs(0, c, pac, heights[0][c])
+            dfs(rows - 1, c, atl, heights[rows - 1][c])
+
+        # left and right cols -> borders pacific (left), borders atlantic (right)
+        for r in range(rows):
+            dfs(r, 0, pac, heights[r][0])
+            dfs(r, cols - 1, atl, heights[r][cols - 1])
+
+        # now check if each r, c is in BOTH sets!
+        for r in range(rows):
+            for c in range(cols):
