@@ -32,3 +32,7 @@ class Solution:
         # now check if each r, c is in BOTH sets!
         for r in range(rows):
             for c in range(cols):
+                if ((r, c) in pac and (r, c) in atl):
+                    res.append([r, c])
+        
+        return res
