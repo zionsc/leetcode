@@ -27,3 +27,6 @@ class Solution:
                         grid[r + dr][c + dc] = 2
                         q.append([r + dr, c + dc])
                         fresh -= 1
+                
+            time += 1 # outside of the q, since each time q loop iterates, that is one time unit. 
+
