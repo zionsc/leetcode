@@ -17,4 +17,8 @@ class Solution:
 
         directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
 
-        
+        while q and fresh > 0: # will stop at either point, both must be true
+            for i in range(len(q)): # for all items in the queue
+                for dr, dc in directions:
+                    if r + dr in range(rows) and c + dc in range(cols) and grid[r + dr][c + dc] == 1:
+                        
