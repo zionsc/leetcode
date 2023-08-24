@@ -30,3 +30,5 @@ class Solution:
                 
             time += 1 # outside of the q, since each time q loop iterates, that is one time unit. 
 
+        return time if fresh == 0 else -1 # return the time if no more fresh. else if there is still fresh, not possible, thus return -1. 
+
