@@ -3,7 +3,7 @@ class Solution:
         parent = [i for i in range(len(edges) + 1)] # each node is going to be its parent for now. (start at 0 for the math to make sense, but we won't use it.)
         rank = [1] * (len(edges) + 1)
 
-        def find(node):
+        def find(n):
             p = parent[n]
             
             while p != parent[p]: # while p is not the ultimate final root node (parent)
