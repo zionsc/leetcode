@@ -16,4 +16,8 @@ class Solution:
 
             if p1 == p2:
                 return False # FOUND THE REDUNDANT CONNECTION -> CYCLE DETECTED!
+            
+            if rank[p1] > rank[p2]:
+                parent[p2] = p1
+                rank[] 
 
