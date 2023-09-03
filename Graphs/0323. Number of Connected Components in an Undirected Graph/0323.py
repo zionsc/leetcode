@@ -9,5 +9,6 @@ class Solution:
             while res != parent[res]:
                 res = parent[parent[res]] # path compression (just simple optimization)
                 res = parent[res]
+                
             return res
         
