@@ -18,4 +18,8 @@ class Solution:
             if p1 == p2:
                 return 0
             
-            
+            # simple union find --> we can't make it a linked-list right?? --> remember CSCI270 with prof. Cote!
+            if rank[p1] > rank[p2]:
+                parent[p2] = p1
+            else:
+                parent[p1] = p2
