@@ -25,6 +25,15 @@ class Solution:
             else:
                 parent[p1] = p2
                 rank[p2] += rank[p1]
-                
+
+            return 1
+        
+        res = n
+        for n1, n2 in edges:
+            res -= union(n1, n2)
+
+        return res
+
+
 
             
