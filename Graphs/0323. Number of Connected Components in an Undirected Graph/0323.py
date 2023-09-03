@@ -7,8 +7,7 @@ class Solution:
             res = n1
 
             while res != parent[res]:
+                res = parent[parent[res]] # path compression (just simple optimization)
                 res = parent[res]
-
             return res
-        
         
