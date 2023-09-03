@@ -28,7 +28,8 @@ class Solution:
 
             return 1
         
-        # start with the number of nodes, decrement everytime we have a fully connected component
+        # start with the number of nodes, decrement everytime we have a fully connected component 
+        # we start with res = n (each node itself is a separate connected component)
         res = n
         for n1, n2 in edges:
             res -= union(n1, n2)
