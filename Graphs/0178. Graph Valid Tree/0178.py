@@ -5,4 +5,7 @@ class Solution:
     @return: true if it's a valid tree, or false
     """
     def valid_tree(self, n: int, edges: List[List[int]]) -> bool:
-        
+        if not n:
+            return True
+
+        adjacencyList = { i: }
