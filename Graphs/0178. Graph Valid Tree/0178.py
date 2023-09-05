@@ -24,6 +24,8 @@ class Solution:
             visited.add(i)
 
             for j in adjacencyList[i]:
+                if j == prev:
+                    continue
                 if not dfs(j, i):
                     return False
             return True
