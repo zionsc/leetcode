@@ -13,7 +13,7 @@ class Solution:
         visited = set()
         adjacencyList = { i:[] for i in range(n) }
 
-        for n1, n2 in edges:
+        for n1, n2 in edges: # will skip if n1 or n2 are already existing in the map
             adjacencyList[n1].append(n2)
             adjacencyList[n2].append(n1)
         
@@ -24,7 +24,7 @@ class Solution:
             visited.add(i)
 
             for j in adjacencyList[i]:
-                if j == prev:
+                if j == prev: # if found a repeat (continue because it is technically not a cycle, just a return to the prev node)
                     continue
                 if not dfs(j, i):
                     return False
