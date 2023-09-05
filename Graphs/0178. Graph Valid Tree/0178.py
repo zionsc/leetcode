@@ -17,9 +17,20 @@ class Solution:
             adjacencyList[n1].append(n2)
             adjacencyList[n2].append(n1)
         
-        def dfs(node, prev):
-            if node in visited: # cycle
+        def dfs(i, prev): # currNode, prevNode (keep track of prevNode so we make sure that we can return in non-cyclic case)
+            if i in visited: # cycle --> tree cannot have cycle 
                 return False
+            
+            visited.add(i)
+
+            for j in adjacencyList[i]:
+                if not dfs(j, i):
+                    return False
+            return True
+
+
+        # dfs must return TRUE meaning there is no cycle, and len(visited) == n meaning that all nodes have been visited. 
+        return dfs(0, -1) and len(visited) == n
             
         
 
