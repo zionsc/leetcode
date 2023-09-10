@@ -47,7 +47,7 @@ class Solution:
             # reversed
             temp = groupPrev.next
             groupPrev.next = kth # connecting the prev linkedlist to the newly reversed linked list
-            groupPrev = temp # 
+            groupPrev = temp # reseting groupPrev to the new 1 before the next kth possible group
 
 
         return dummy.next
