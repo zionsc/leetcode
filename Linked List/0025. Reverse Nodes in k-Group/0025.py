@@ -46,8 +46,8 @@ class Solution:
             # basically this step is to update the pointers of the nodes around the group after it has been
             # reversed
             temp = groupPrev.next
-            groupPrev.next = kth
-            groupPrev = groupPrev.next
+            groupPrev.next = kth # connecting the prev linkedlist to the newly reversed linked list
+            groupPrev = temp # 
 
 
         return dummy.next
