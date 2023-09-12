@@ -128,4 +128,5 @@ GRAPHS: BFS, DFS! -> recursive leap of faith
 
 
 HEAP/PRIORITY QUEUE:
-0703. Kth Largest Element in Stream: 
+0703. Kth Largest Element in Stream: maintain a minheap of size k, as that will maintain the kth largest element at the top of the heap. 
+
