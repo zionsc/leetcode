@@ -129,4 +129,4 @@ GRAPHS: BFS, DFS! -> recursive leap of faith
 
 HEAP/PRIORITY QUEUE:
 0703. Kth Largest Element in Stream: maintain a minheap of size k, as that will maintain the kth largest element at the top of the heap. 
-1046. Last Stone Weight: 
+1046. Last Stone Weight: Basically maintain a max heap --> in order to do this in python, must simply use a min_heap, but with all -values of the original: stones = [-s for s in stones], heapq.heapify(stones), while len(stones) > 1: first = -heapq.heappop(stones), second = -heapq.heappop(stones) (first is the larger value, thus it must be the one at the front in order to get the difference between first and second), if first != second: heapq.heappush(stones, -(first - second)) (must negate it again before heap_push in order to maintain max_heap property)
