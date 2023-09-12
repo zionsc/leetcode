@@ -16,8 +16,20 @@ class Solution:
 
         q = collections.deque([beginWord])
         visit = set([beginWord]) # we want to see if we have already visited that word!
-
+        res = 1
 
             # now BFS
         while q:
-            
+            for i in range(len(q)): # for each word in q
+                word = q.popleft()
+                if word == endWord:
+                    return res
+                for j in word:
+                    pattern = word[:j] + "*" + word[j + 1:]
+                    for neiWord in nei[pattern]:
+                        if neiWord not in visit:
+                            visit.add(neiWord)
+                            q.append(neiWord)
+            res += 1
+
+        return 0 
