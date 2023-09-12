@@ -2,6 +2,11 @@ class KthLargest:
     def __init__(self, k: int, nums: List[int]):
         # using a minheap to make faster runtime (nlogn to make at the worst case)
         self.minHeap, self.k = nums, k # we keep k in order to make the minheap size of k later
+        heapq.heapify(self.minHeap) # heapq.heapify(self.minHeap) is how to heapify in python
+        
+        while len(self.minHeap) > self.k:
+            heapq.heappop(self.minHeap) # this is how to heapq.heappop in python
+
 
         
     def add(self, val: int) -> int:
