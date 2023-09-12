@@ -9,6 +9,8 @@ class KthLargest:
 
     def add(self, val: int) -> int:
         heapq.heappush(self.minHeap, val) # this is how to add to a heap in python
+        if len(self.minHeap) > self.k: # in order to preserve the size of the minHeap as k, we must check if now the minHeap has gone over the size limit
+            heapq.heappop(self.minHeap) 
 
 
 # Your KthLargest object will be instantiated and called as such:
