@@ -7,9 +7,8 @@ class KthLargest:
         while len(self.minHeap) > self.k:
             heapq.heappop(self.minHeap) # this is how to heapq.heappop in python
 
-
-        
     def add(self, val: int) -> int:
+        heapq.heappush(self.minHeap, val) # this is how to add to a heap in python
 
 
 # Your KthLargest object will be instantiated and called as such:
