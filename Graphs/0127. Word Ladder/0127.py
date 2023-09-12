@@ -15,3 +15,9 @@ class Solution:
                 nei[pattern].append(word) # add that to the defaultdict
 
         q = collections.deque([beginWord])
+        visit = set([beginWord]) # we want to see if we have already visited that word!
+
+
+            # now BFS
+        while q:
+            
