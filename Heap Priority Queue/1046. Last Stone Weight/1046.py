@@ -9,3 +9,5 @@ class Solution:
             second = -heapq.heappop(stones)
             if first != second:
                 heapq.heappush(stones, -(first - second)) # must negate it again to maintain max_heap property
+
+        return abs(stones[0]) if stones else 0
