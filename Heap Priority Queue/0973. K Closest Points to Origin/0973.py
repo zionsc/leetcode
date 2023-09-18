@@ -4,4 +4,12 @@ class Solution:
         minHeap = []
         res = []
 
-        
+        for x, y in points:
+            distance = (x**2) + (y**2) # standardized comparison for each point 
+            minHeap.append((distance, x, y))
+        heapq.heapify(minHeap)
+
+        for i in range(k):
+            distance, x, y = heapq.heappop(minHeap) # we can get each value independently (this is some python syntax !! -> crazy good)
+            res.append((x, y))
+        return res
