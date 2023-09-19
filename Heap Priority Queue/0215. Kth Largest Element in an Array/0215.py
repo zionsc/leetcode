@@ -4,3 +4,9 @@ class Solution:
         maxHeap = [-i for i in nums]
         heapq.heapify(maxHeap)
 
+        while k > 0:
+            currVal = -(heapq.heappop(maxHeap))
+            k -= 1
+        
+        return currVal
+
