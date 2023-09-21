@@ -12,6 +12,8 @@ class Solution:
         while maxHeap or q:
             time += 1
             if maxHeap:
-                cnt = 1 + heapq.heappop(maxHeap) # we do + 1 here because the values are negated, meaning they are negative. (we want to decrease the value by 1 since we are processing it in the CPU)
+                # we do + 1 here because the values are negated, 
+                # meaning they are negative. (we want to decrease the value by 1 since we are processing it in the CPU)
+                cnt = 1 + heapq.heappop(maxHeap) 
 
                 if cnt: # if cnt != 0
