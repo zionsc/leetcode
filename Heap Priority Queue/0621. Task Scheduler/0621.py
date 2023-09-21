@@ -17,3 +17,9 @@ class Solution:
                 cnt = 1 + heapq.heappop(maxHeap) 
 
                 if cnt: # if cnt != 0
+                    # reason we do time + n is because we are making sure we remove the value and add it back to the maxheap when the time that it is not idle!
+                    q.append([cnt, time + n]) 
+            if q and q[0][1] == time: # earliest item to be added to the q's time is == to the time it is no longer idle
+                heapq.heappop(maxHeap, q.popleft()[0]) # we do q.popleft()[0] because we want the count, not the time.
+
+        return time
