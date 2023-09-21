@@ -8,4 +8,10 @@ class Solution:
 
         time = 0
 
-        while maxHeap
+        # means that there are still tasks to be completed 
+        while maxHeap or q:
+            time += 1
+            if maxHeap:
+                cnt = 1 + heapq.heappop(maxHeap) # we do + 1 here because the values are negated, meaning they are negative. (we want to decrease the value by 1 since we are processing it in the CPU)
+
+                if cnt: # if cnt != 0
