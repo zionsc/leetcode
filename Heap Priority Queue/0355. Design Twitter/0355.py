@@ -1,15 +1,16 @@
 class Twitter:
 
     def __init__(self):
-        self.count = 0
+        self.count = 0 # must decrement 0 --> float("-inf") because no maxHeap in python (more negative numbers will be first (most recent tweets))
         self.follower_map = defaultdict(set) # followerId : set(followeeIds)
         self.tweet_map = defaultdict(list) # userId : list(tweetId)
 
     def postTweet(self, userId: int, tweetId: int) -> None:
+        self.tweet_map[userId].append(())
         
 
     def getNewsFeed(self, userId: int) -> List[int]:
-        # add all all based on minHeap (reversed maxHeap into a res, )
+        # add all all based on minHeap (reversed maxHeap into a res, then while it is less than 10 or minheap is not empty)
         
 
     def follow(self, followerId: int, followeeId: int) -> None:
