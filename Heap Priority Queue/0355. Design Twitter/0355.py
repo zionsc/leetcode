@@ -29,9 +29,7 @@ class Twitter:
                 heapq.heappush(minHeap, (count, followeeId, tweetId, index - 1))
             
         return res
-
-
-
+    
 
     def follow(self, followerId: int, followeeId: int) -> None:
         self.follower_map[followerId].add(followeeId)
