@@ -1,12 +1,15 @@
 class Twitter:
 
     def __init__(self):
-        
+        self.count = 0
+        self.follower_map = defaultdict(set) # followerId : set(followeeIds)
+        self.tweet_map = defaultdict(list) # userId : list(tweetId)
 
     def postTweet(self, userId: int, tweetId: int) -> None:
         
 
     def getNewsFeed(self, userId: int) -> List[int]:
+        # add all all based on minHeap (reversed maxHeap into a res, )
         
 
     def follow(self, followerId: int, followeeId: int) -> None:
