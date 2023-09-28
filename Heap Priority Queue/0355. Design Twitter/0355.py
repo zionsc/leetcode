@@ -3,7 +3,7 @@ class Twitter:
     def __init__(self):
         self.count = 0 # must decrement 0 --> float("-inf") because no maxHeap in python (more negative numbers will be first (most recent tweets))
         self.follower_map = defaultdict(set) # followerId : set(followeeIds)
-        self.tweet_map = defaultdict(list) # userId : list(tweetId)
+        self.tweet_map = defaultdict(list) # userId : list(count, tweetId)
 
     def postTweet(self, userId: int, tweetId: int) -> None:
         self.tweet_map[userId].append((self.count, tweetId))
@@ -17,9 +17,12 @@ class Twitter:
         self.follower_map[userId].add(userId)
         for followeeId in self.follower_map[userId]:
             if followeeId in self.tweet_map:
-                
+                index = len(self.tweet_map[followeeId]) - 1
+                count, tweetId = self.tweet_map[followeeId][index] # getting each count and tweetId (add each start of each followee into minHeap in order to iterate individually)
+                heapq.heappush((count, followeeId, tweetId, index - 1))
 
-        while minHeap:
+        while minHeap and :
+
 
 
 
