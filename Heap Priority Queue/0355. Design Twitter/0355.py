@@ -24,8 +24,11 @@ class Twitter:
         while minHeap and len(res) < 10:
             count, followeeId, tweetId, index = heapq.heappop(minHeap)
             res.append(tweetId)
-            if index >= 0:
-                
+            if index >= 0: # now iterate the index for each userId (index - 1)
+                count, tweetId = self.tweet_map[followeeId][index]
+                heapq.heappush((count, followeeId, tweetId, index - 1))
+            
+        return res
 
 
 
