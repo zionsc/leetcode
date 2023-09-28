@@ -9,16 +9,18 @@ class Twitter:
         self.tweet_map[userId].append((self.count, tweetId))
         self.count -= 1
         
-        
 
     def getNewsFeed(self, userId: int) -> List[int]:
         # add all all based on minHeap (reversed maxHeap into a res, then while it is less than 10 or minheap is not empty)
         
 
     def follow(self, followerId: int, followeeId: int) -> None:
+        self.follower_map[followerId].add(followeeId)
         
 
     def unfollow(self, followerId: int, followeeId: int) -> None:
+        if followeeId in self.follower_map[followerId]:
+            self.follower_map[followerId].remove(followeeId)
         
 
 
