@@ -6,7 +6,9 @@ class Twitter:
         self.tweet_map = defaultdict(list) # userId : list(tweetId)
 
     def postTweet(self, userId: int, tweetId: int) -> None:
-        self.tweet_map[userId].append(())
+        self.tweet_map[userId].append((self.count, tweetId))
+        self.count -= 1
+        
         
 
     def getNewsFeed(self, userId: int) -> List[int]:
