@@ -19,14 +19,14 @@ class Twitter:
             if followeeId in self.tweet_map:
                 index = len(self.tweet_map[followeeId]) - 1
                 count, tweetId = self.tweet_map[followeeId][index] # getting each count and tweetId (add each start of each followee into minHeap in order to iterate individually)
-                heapq.heappush((count, followeeId, tweetId, index - 1))
+                heapq.heappush(minHeap, (count, followeeId, tweetId, index - 1))
 
         while minHeap and len(res) < 10:
             count, followeeId, tweetId, index = heapq.heappop(minHeap)
             res.append(tweetId)
             if index >= 0: # now iterate the index for each userId (index - 1)
                 count, tweetId = self.tweet_map[followeeId][index]
-                heapq.heappush((count, followeeId, tweetId, index - 1))
+                heapq.heappush(minHeap, (count, followeeId, tweetId, index - 1))
             
         return res
 
