@@ -12,7 +12,16 @@ class Twitter:
 
     def getNewsFeed(self, userId: int) -> List[int]:
         # add all all based on minHeap (reversed maxHeap into a res, then while it is less than 10 or minheap is not empty)
-        
+        res = []
+        minHeap = []
+        self.follower_map[userId].add(userId)
+        for followeeId in self.follower_map[userId]:
+            if followeeId in self.tweet_map:
+                
+
+        while minHeap:
+
+
 
     def follow(self, followerId: int, followeeId: int) -> None:
         self.follower_map[followerId].add(followeeId)
