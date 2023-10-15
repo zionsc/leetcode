@@ -6,4 +6,6 @@ class Solution:
 
         for i in range(len(cost)):
             for j in range(len(cost), -1, -1):
-                
+                money[j] = min(money[j], money[max(j - time[i] - 1, 0)] + cost[i])
+            
+        return money[-1]
