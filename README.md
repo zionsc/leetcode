@@ -140,4 +140,4 @@ HEAP/PRIORITY QUEUE:
 
 
 BIT MANIPULATION: (datalab basically)
-0136. Single Number: 
+0136. Single Number: Basically just have res = 0 and xor it with all the numbers. the numbers that appear twice will cancel out.
