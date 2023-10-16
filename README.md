@@ -148,3 +148,7 @@ HEAP/PRIORITY QUEUE:
 
 BIT MANIPULATION: (datalab basically)
 0136. Single Number: Basically just have res = 0 and xor it with all the numbers. the numbers that appear twice will cancel out.
+
+
+MATH & GEOMETRY
+0343. Integer Break: Basically use the idea of a pattern of what gets multiplied together for each number. 3 =  1 * 2, 4 = 2 * 2, 5 = 3 * 2, 6 = 3 * 3, 7 = 4 * 3, 8 = 3 * 3 * 2 --> basically the pattern is: multiply as many threes as you can, if remainder is 0, thats just the answer, if remainder is 1: add one to one of the threes to mulitply by 4, if remainder is 2, then simply multiply 2 to the answer.
