@@ -13,10 +13,12 @@ class Solution:
                 dp[step][index] += dp[step - 1][index]
 
                 # moved left previously
-                dp[step][index] += dp[step - 1][index + 1]
+                if index > 0:
+                    dp[step][index] += dp[step - 1][index + 1]
 
                 # moved right previously 
-                dp[step][index] += dp[step - 1][index - 1]
+                if index < maxLen:
+                    dp[step][index] += dp[step - 1][index - 1]
 
                 # modulo at each step to not overflow
                 dp[step][index] %= mod
