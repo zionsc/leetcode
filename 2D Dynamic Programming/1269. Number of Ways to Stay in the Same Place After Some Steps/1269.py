@@ -17,7 +17,7 @@ class Solution:
                     dp[step][index] += dp[step - 1][index + 1]
 
                 # moved right previously 
-                if index < maxLen:
+                if index < maxLen - 1:
                     dp[step][index] += dp[step - 1][index - 1]
 
                 # modulo at each step to not overflow
