@@ -16,9 +16,18 @@ class Solution:
                 parentCount[child] += 1
                 if parentCount[child] > 1:
                     return False
-            rootCount = sum(1 for i, count in parentCount.items() if parentCount[i] == 0)
+            rootCount = sum(1 for i, count in parentCount.items() if count == 0)
             if rootCount != 1:
                 return False
 
         # 3. all nodes are visited
+        visited = set()
+        def dfs(node):
+            visited.add(node)
+            for i in range(n):
+                for child in adj_list[i]:
+                    dfs(node)
+        dfs(next(i for i, count in parentCount.items() if count == 0))
+        
+        return True if len(visited) == n else False
     
