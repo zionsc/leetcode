@@ -1,6 +1,6 @@
 class Solution:
     def validateBinaryTreeNodes(self, n: int, leftChild: List[int], rightChild: List[int]) -> bool:
-        
+
         # 1. create adj_list
         adj_list = { i:[] for i in range(n) }
         for i in range(n):
@@ -10,5 +10,15 @@ class Solution:
                 adj_list[i].append(rightChild[i])
 
         # 2. all nodes have one parent other than root
+        parentCount = { i:0 for i in range(n) }
+        for i in range(n):
+            for child in adj_list[i]:
+                parentCount[child] += 1
+                if parentCount[child] > 1:
+                    return False
+            rootCount = sum(1 for i, count in parentCount.items() if parentCount[i] == 0)
+            if rootCount != 1:
+                return False
+
         # 3. all nodes are visited
     
