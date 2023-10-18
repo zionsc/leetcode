@@ -16,7 +16,7 @@ class Solution:
                 parentCount[child] += 1
                 if parentCount[child] > 1:
                     return False
-            rootCount = sum(1 for i in parentCount if parentCount[i] != 0)
+            rootCount = sum(1 for i in parentCount if parentCount[i] != 1)
             if rootCount != 1:
                 return False
 
