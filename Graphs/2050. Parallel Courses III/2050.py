@@ -24,6 +24,8 @@ class Solution:
                 if in_degree[nei] == 0:
                     queue.append(nei)
 
+        total_time = [0] * (n + 1)
+        for crs in topo_order:
             
 
 
