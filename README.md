@@ -151,6 +151,7 @@ HEAP/PRIORITY QUEUE:
 
 BIT MANIPULATION: (datalab basically)
 0136. Single Number: Basically just have res = 0 and xor it with all the numbers. the numbers that appear twice will cancel out.
+0191. Number of 1 Bits: Simply have a counter for the number of bits that are 1 by iterating through for i in range(32): shift each position --> if (n >> i) & 1 (mask with 1 to see if the shifted position is 1!) == 1: cnt += 1 ->-> return cnt (basically iterate through each bitshifted then masked LSB position, then cnt++ if it is a 1)
 
 
 MATH & GEOMETRY
