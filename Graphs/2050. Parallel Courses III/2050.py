@@ -17,7 +17,7 @@ class Solution:
         topo_order = []
 
         while queue:
-            crs = queue.pop()
+            crs = queue.popleft()
             topo_order.append(crs)
             for nei in adj_list[crs]:
                 in_degree[nei] -= 1
@@ -25,8 +25,15 @@ class Solution:
                     queue.append(nei)
 
         total_time = [0] * (n + 1)
-        for crs in topo_order:
-            
+        for i in range(n):
+            crs = topo_order[i]
+            total_time[crs] += time[crs-1] # because its 1 indexed in the time array given by the question
+
+            for nei in adj_list[crs]:
+                total_time[nei] = max(total_time[crs], total_time[nei])
+
+        return max(total_time)
+
 
 
         
