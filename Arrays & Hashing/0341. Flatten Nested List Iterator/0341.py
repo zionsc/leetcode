@@ -27,7 +27,7 @@ class NestedIterator:
 
         def convertThing(thing):
             if thing.isInteger():
-                self.res.append(thing)
+                self.res.append(thing.getInteger())
             else: # thing is a list
                 for item in thing.getList():
                     convertThing(item)
@@ -35,13 +35,10 @@ class NestedIterator:
         for item in nestedList:
             convertThing(item)
 
-
-
     def next(self) -> int: # simply ask for the next value
         return_thing = self.res[self.idx]
         self.idx += 1
         return return_thing
-
 
     def hasNext(self) -> bool: # simple boolean 
         return True if self.idx < len(self.res) else False
