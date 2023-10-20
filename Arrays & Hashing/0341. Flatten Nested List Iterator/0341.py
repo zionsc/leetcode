@@ -26,6 +26,14 @@ class NestedIterator:
         self.idx = 0
 
         def convertThing(thing):
+            if thing.isInteger():
+                self.res.append(thing)
+            else: # thing is a list
+                for item in thing.getList():
+                    convertThing(item)
+
+        for item in nestedList:
+            convertThing(item)
 
 
 
