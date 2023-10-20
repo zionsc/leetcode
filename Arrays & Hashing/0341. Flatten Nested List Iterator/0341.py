@@ -22,8 +22,18 @@
 
 class NestedIterator:
     def __init__(self, nestedList: [NestedInteger]): # implementation into a list
-        
+        self.res = []
+        self.idx = 0
+
+        def convertThing(thing):
+
+
 
     def next(self) -> int: # simply ask for the next value
+        return_thing = self.res[self.idx]
+        self.idx += 1
+        return return_thing
+
 
     def hasNext(self) -> bool: # simple boolean 
+        return True if self.idx < len(self.res) else False
