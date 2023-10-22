@@ -10,6 +10,7 @@ r//3 and c//3 as // is integer div to return 0 1 2 x 0 1 2 for each of the 9 squ
 0659. Encode and Decode Strings: Length of string+delimeter in order to make each encode unique --> number is str[i:j] with j being the first # after the number (length of string) res.append(str[j+1 : j+1+length]), then i = j + 1 + length --> to find next #.
 0128. Longest Consecutive Sequence: Check if number is the start of a sequence (if n-1 is not in set) --> while (n+length) is in set, length += 1 
 0341. Flatten Nested List Iterator: Use the given .getInteger() .isInteger() .getList() functions!! basically run through iteratively def convert(thing): if thing.isInteger(): self.res.append(thing.getInteger()) -> else: (basically is a list) for item in thing.getList(): convert(item) ->-> for item in nestedList: convert(item)
+1560. Most Visited Sector in a Circular Track: Basically if first sector is less than or equal to the last sector, then it means that we did not cross, or that we dont need to consider because we visit the first and the last most often, thus return [i for i in range(a, b + 1)]. Else if the last sector is bigger than the first sector, it means that we did cross, and the values in between are also a part of the most visited, meaning we must return [i for i in range(1, b + 1)] + [i for i in range(a, n + 1)]
 
 
 STACK: maybe use more than 1 stack? maybe use recursion
