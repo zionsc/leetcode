@@ -163,3 +163,7 @@ MATH & GEOMETRY
 
 GREEDY:
 1793. Maximum Score of a Good Subarray: Simply use greedy by making res = mini = res[k], then while i < 0 or j > len(nums) - 1: if i == 0: j += 1 -> elif j == len(nums) - 1: i -= 1 -> elif nums[i - 1] < nums[j + 1]: j += 1 (must try j before trying the smaller values) -> else: i -= 1 -> mini = min(mini, nums[i], nums[j]), res = max(res, mini * (j - i + 1)) 
+
+
+RECURSION:
+0038. Count and Say: Basically recursively loop through for i in range(n - 1): recursive(res), keep a while loop basic recursion. ret += count, ret += currStr
