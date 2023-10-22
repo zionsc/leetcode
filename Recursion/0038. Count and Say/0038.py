@@ -19,7 +19,6 @@ class Solution:
                 i += 1
             res = ret
 
-
         for i in range(n - 1):
             recursion(res)
         return res
