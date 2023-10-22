@@ -158,3 +158,7 @@ MATH & GEOMETRY
 0343. Integer Break: Basically use the idea of a pattern of what gets multiplied together for each number. 3 =  1 * 2, 4 = 2 * 2, 5 = 3 * 2, 6 = 3 * 3, 7 = 4 * 3, 8 = 3 * 3 * 2 --> basically the pattern is: multiply as many threes as you can, if remainder is 0, thats just the answer, if remainder is 1: add one to one of the threes to mulitply by 4, if remainder is 2, then simply multiply 2 to the answer.
 0066. Plus One: Basically run backwards, if digits[i] == 9: digits[i] = 0, if i == 0: digits.insert(0, 1) (append 1 to the front of digits for carry over) -> -> else: digits[i] += 1, break (NEED THIS BREAK or it will keep adding 1.)
 0202. Happy Number: Basically cycle stuff, use a set() to make sure the same thing didnt pop up again, if it did --> return False. have a recursive function def findHappy(numStr): if int(numStr) == 1: return True --> if int(numStr) in visitedSet: return False --> res = 0, visitedSet.add(int(numStr)), for n in range(len(numStr)): res += int(numStr[0]) ** 2 --> return findHappy(str(res)) --> return findHappy(str(n)) --> basically use string comprehension
+
+
+GREEDY:
+1793. Maximum Score of a Good Subarray: Simply use greedy by making res = mini = res[k], then while i < 0 or j > len(nums) - 1: if i == 0: j += 1 -> elif j == len(nums) - 1: i -= 1 -> elif nums[i - 1] < nums[j + 1]: j += 1 (must try j before trying the smaller values) -> else: i -= 1 -> mini = min(mini, nums[i], nums[j]), res = max(res, mini * (j - i + 1)) 
