@@ -25,21 +25,20 @@ class Solution:
             return []
 
         res = []
-        queue = [root]
-
+        queue = deque([(root, 0)])
+        
         while queue:
-            level_size = len(queue)
-            curr_max = float('-inf')
+            node, level = queue.popleft()
 
-            for i in range(level_size):
-                node = queue.pop(0)
-                curr_max = max(curr_max, node.val)
-                if node.left:
-                    queue.append(node.left) 
-                if node.right:
-                    queue.append(node.right) 
+            if level == len(res): # it is a new level
+                res.append(node.val)
+            else: # existing level
+                res[level] = max(res[level], node.val)
             
-            res.append(curr_max)
+            if node.left:
+                queue.append((node.left, level + 1))
+            if node.right:
+                queue.append((node.right, level + 1))
 
         return res
 
