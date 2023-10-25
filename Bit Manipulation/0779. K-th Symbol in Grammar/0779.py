@@ -8,3 +8,4 @@ class Solution:
         # 1st and 2nd positions in the n-th row come from the 1st position in the (n-1)-th row.
         # 3rd and 4th positions in the n-th row come from the 2nd position in the (n-1)-th row.
         parent = self.kthGrammar(n - 1, (k + 1) // 2)
+        return parent if k % 2 == 1 else 1 - parent 
