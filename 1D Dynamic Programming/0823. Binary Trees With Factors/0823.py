@@ -6,4 +6,8 @@ class Solution:
         arr.sort()
         s = set()
         dp = { x : 1 for x in arr }
+
+        for i in range(len(arr)):
+            for j in range(len(arr)):
+                
         
