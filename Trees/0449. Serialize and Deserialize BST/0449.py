@@ -12,13 +12,20 @@ class Codec:
         if not root:
             return ""
         
-        res = ""
+        res = []
         q = deque([root])
 
         while q:
             node = q.popleft()
             if not node:
-                
+                res.append("null")
+                continue
+            res.append(str(node.val))
+
+            q.append(node.left)
+            q.append(node.right)
+        
+        return ",".join(res)
 
     def deserialize(self, data: str) -> Optional[TreeNode]:
         """Decodes your encoded data to tree."""
