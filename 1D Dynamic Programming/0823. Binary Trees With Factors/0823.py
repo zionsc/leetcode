@@ -16,7 +16,7 @@ class Solution:
                     if i // j == j: # j * j == i
                         dp[i] += dp[j] * dp[j]
                     else: # j * something == i
-                        dp[i] += dp[j] * dp[i // j]
+                        dp[i] += dp[j] * dp[i // j] * 2 # since there are two arrangements (j * val and val * j)
                     dp[i] %= MOD
         return sum(dp.values()) % MOD
 
