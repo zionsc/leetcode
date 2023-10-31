@@ -1,2 +1,4 @@
 class Solution:
     def findArray(self, pref: List[int]) -> List[int]:
+        if not pref:
+            return []
