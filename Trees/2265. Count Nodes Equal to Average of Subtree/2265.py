@@ -22,3 +22,7 @@ class Solution:
             if total_sum // total_cnt == node.val:
                 self.cnt += 1
             
+            return total_sum, total_cnt
+    
+        dfs(root)
+        return self.cnt
