@@ -11,3 +11,19 @@ class Solution:
                 start_node = i
                 break
         
+        res = []
+        stack = [start_node]
+        visited = set()
+
+        while stack:
+            val = stack.pop()
+            if val not in visited:
+                visited.add(val)
+                res.append(val)
+                for num in adj[val]:
+                    if num not in visited:
+                        stack.append(num)
+
+        return res
+
+                
