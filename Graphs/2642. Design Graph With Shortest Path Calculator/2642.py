@@ -12,12 +12,12 @@ class Graph:
         return self.dijkstras(node1, node2)
     
     def dijkstras(self, start: int, end: int) -> int:
-        minHeap = [(start, 0)] # priority queue for dijkstras
+        minHeap = [(0, start)] # priority queue for dijkstras
         distances = [float('inf')] * len(self.adj)
         distances[start] = 0
 
         while minHeap:
-            curr_node, curr_distance = heapq.heappop(minHeap)
+            curr_distance, curr_node = heapq.heappop(minHeap)
 
             if curr_distance > distances[curr_node]:
                 continue
@@ -30,6 +30,6 @@ class Graph:
                 new_distance = distances[curr_node] + nei_distance
                 if new_distance < distances[nei_node]:
                     distances[nei_node] = new_distance
-                    heapq.heappush(minHeap, (nei_node, new_distance))
+                    heapq.heappush(minHeap, (new_distance, nei_node))
 
         return distances[end] if distances[end] != float('inf') else -1
