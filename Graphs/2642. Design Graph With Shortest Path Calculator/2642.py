@@ -11,11 +11,25 @@ class Graph:
     def shortestPath(self, node1: int, node2: int) -> int:
         return self.dijkstras(node1, node2)
     
-    def dijkstras(self, node1: int, node2: int) -> int:
-        minHeap = [(node1, 0)] # priority queue for dijkstras
+    def dijkstras(self, start: int, end: int) -> int:
+        minHeap = [(start, 0)] # priority queue for dijkstras
         distances = [float('inf')] * len(self.adj)
-        distances[node1] = 0
+        distances[start] = 0
 
         while minHeap:
-            
+            curr_node, curr_distance = heapq.heappop(minHeap)
 
+            if distances[curr_node] < new_distance:
+                continue
+            
+            if curr_node == end:
+                return curr_distance
+            
+            for edge in self.adj[curr_node]:
+                nei_node, nei_distance = edge
+                new_distance = distances[curr_node] + nei_distance
+                if new_distance < distances[nei_node]:
+                    distances[nei_node] = new_distance
+                    heapq.heappush(minHeap, (nei_node, new_distance))
+
+        return distances[end] if distances[end] != float('inf') else -1
