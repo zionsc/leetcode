@@ -19,7 +19,7 @@ class Graph:
         while minHeap:
             curr_node, curr_distance = heapq.heappop(minHeap)
 
-            if distances[curr_node] < new_distance:
+            if curr_distance > distances[curr_node]:
                 continue
             
             if curr_node == end:
