@@ -1,30 +1,56 @@
 class Solution:
     def numBusesToDestination(self, routes: List[List[int]], source: int, target: int) -> int:
+        # Build a graph where each stop is associated with the buses that pass through it
+        stop_to_buses = defaultdict(list)
+
+        for bus_id, route in enumerate(routes):
+            for stop in route:
+                stop_to_buses[stop].append(bus_id)
+
+        # Check if source and target stops are in the graph
+        if source not in stop_to_buses or target not in stop_to_buses:
+            return -1
+
+        # If the source and target are the same stop, no buses are needed
         if source == target:
             return 0
 
-        max_stop = max(max(route) for route in routes)
-        if max_stop < target:
-            return -1
+        # Use BFS to find the minimum number of buses to reach the target stop
+        queue = deque([source])
+        buses_taken = set()
+        stops_visited = set()
+        res = 0
 
-        n = len(routes)
-        min_buses_to_reach = [float('inf')] * (max_stop + 1)
-        min_buses_to_reach[source] = 0
+        while queue:
+            # Increment the res for each level of stops
+            res += 1
+            stops_to_process = len(queue)
 
-        flag = True
-        while flag:
-            flag = False
-            for route in routes:
-                mini = float('inf')
-                for stop in route:
-                    mini = min(mini, min_buses_to_reach[stop])
-                mini += 1
-                for stop in route:
-                    if min_buses_to_reach[stop] > mini:
-                        min_buses_to_reach[stop] = mini
-                        flag = True
+            for _ in range(stops_to_process):
+                current_stop = queue.popleft()
 
-        return min_buses_to_reach[target] if min_buses_to_reach[target] < float('inf') else -1
+                # Check buses passing through the current stop
+                for bus_id in stop_to_buses[current_stop]:
+                    if bus_id in buses_taken:
+                        continue
+
+                    buses_taken.add(bus_id)
+
+                    # Check stops reachable from the current bus
+                    for next_stop in routes[bus_id]:
+                        if next_stop in stops_visited:
+                            continue
+
+                        # If the target is reached, return the res
+                        if next_stop == target:
+                            return res
+
+                        # Add the next stop to the queue and mark it as visited
+                        queue.append(next_stop)
+                        stops_visited.add(next_stop)
+
+        # If no valid route is found
+        return -1
         # if source == target:
         #     return 0
 
