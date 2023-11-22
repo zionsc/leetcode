@@ -9,6 +9,6 @@ class Solution:
         
         for i in range(n - 2, -1, -1):
             if ratings[i] > ratings[i + 1]:
-                res[i] = max(res, res[i + 1] + 1)
+                res[i] = max(res[i], res[i + 1] + 1)
         
         return sum(res)
