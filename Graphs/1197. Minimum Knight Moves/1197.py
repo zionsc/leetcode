@@ -7,6 +7,18 @@ class Solution:
         visited = set()
         visited.add((0,0))
         queue = deque()
-        queue.add((0,0))
+        queue.append((0,0))
 
         while queue:
+            for _ in range(len(queue)):
+                curr_x, curr_y = queue.popleft()
+                if curr_x == x and curr_y == y:
+                    return res
+                for dx, dy in directions:
+                    new_x, new_y = curr_x + dx, curr_y + dy
+                    if (new_x, new_y) not in visited:
+                        queue.append((new_x, new_y))
+                        visited.add((new_x, new_y))
+            res += 1
+        
+        return res
