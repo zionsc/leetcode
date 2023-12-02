@@ -12,4 +12,8 @@ class Solution:
             if remainder < 0:
                 remainder += k
             
+            res += remainder_count[remainder]
+            remainder_count[remainder] += 1
+
+        return res
 
