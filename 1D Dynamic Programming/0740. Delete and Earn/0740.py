@@ -22,3 +22,9 @@ class Solution:
 
         # we start from 2 because we know 0 and 1 have been initialized already.
         for num in range(2, len(dp)):
+            # this recurrence relation because we can either take the previous one or the num - 2!!! 
+            # because we got to remove all num - 1 and num + 1 (num + 1 will be taken care of in future steps)
+            dp[num] = max(dp[num - 1], dp[num - 2] + counter[num])
+
+        return dp[-1] # or return dp[max_num] which is basically the same thing, because dp's indices represent
+    # actual numbers in nums, not the indices of nums.
