@@ -11,13 +11,13 @@ class Solution:
             elif c == ' ':
                 continue
             else: # c is an operation
-                if c == '+':
+                if op == '+':
                     stack.append(num)
-                elif c == '-':
+                elif op == '-':
                     stack.append(-num)
-                elif c == '*':
+                elif op == '*':
                     stack.append(stack.pop() * num)
-                elif c == '/':
+                elif op == '/':
                     stack.append(int(stack.pop() / num))
 
                 num = 0
