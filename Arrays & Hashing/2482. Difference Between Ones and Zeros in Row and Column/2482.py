@@ -1,8 +1,8 @@
 class Solution:
     def onesMinusZeros(self, grid: List[List[int]]) -> List[List[int]]:
         m, n = len(grid), len(grid[0])
-        row = [0]*m
-        col = [0]*n
+        row = [0] * m
+        col = [0] * n
         
         # just make and return diff
         
