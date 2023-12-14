@@ -1,20 +1,25 @@
 class Solution:
 
-    def __init__(self, w: List[int]):
-        self.w = w
-        total = sum(w)
-        length = len(w)
-        self.lst = []
-
-        for i in range(len(w)):
-            num_times = 10000 * (w[i] / total)
-            for j in range(int(num_times)):
-                self.lst.append(i)
+    def __init__(self, weights: List[int]):
+        self.prefixSums = []
+        prefix_sum = 0
+        for weight in weights :
+            prefix_sum += weight
+            self.prefixSums.append(prefix_sum)
+        self.totalSum = self.prefixSums[-1]
 
     def pickIndex(self) -> int:
-        return random.choice(self.lst)
-        
-        
+        target = self.totalSum*random.random()
+
+        # run a binary search to find the target zone
+        low, high = 0, len(self.prefixSums)
+        while low < high:
+            mid = (low + high) // 2
+            if self.prefixSums[mid] < target:
+                low = mid + 1
+            else:
+                high = mid
+        return low
 
 
 # Your Solution object will be instantiated and called as such:
