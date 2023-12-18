@@ -1,5 +1,6 @@
+from collections import defaultdict
+from heapq import heapq
 class FoodRatings:
-
     def __init__(self, foods: List[str], cuisines: List[str], ratings: List[int]):
         # need ratings to see if the food is actually updated
         self.ratings = defaultdict(int)
@@ -26,3 +27,8 @@ class FoodRatings:
                 heapq.heappop(self.by_cuisine[cuisine])
                 continue
             return food
+        
+"""
+Test case
+"""
+
