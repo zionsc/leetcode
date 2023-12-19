@@ -7,4 +7,8 @@ class Solution:
 
         left_condition = [0 for _ in range(len(nums))]
         for i in range(k, len(nums) - k):
-            
+            if nums[i] > -left[0]:
+                left_condition[i] = 1
+            heapq.heappushpop(left, -nums[i])
+
+        
