@@ -19,4 +19,11 @@ class Solution:
 
         dfs(root, 0)
 
+        depth_to_node = defaultdict(list)
+        for node, depth in depth_map.items():
+            depth_to_node[depth].append(height[node], node)
+            depth_to_node[depth].sort(reverse=True)
+            if len(depth_to_node[depth]) > 2:
+                depth_to_node[depth].pop()
+
         
