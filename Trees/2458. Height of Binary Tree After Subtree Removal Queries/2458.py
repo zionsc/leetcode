@@ -6,4 +6,17 @@
 #         self.right = right
 class Solution:
     def treeQueries(self, root: Optional[TreeNode], queries: List[int]) -> List[int]:
+        depth_map = defaultdict(int)
+        height_map = defaultdict(int)
+
+        def dfs(node, depth):
+            if not node:
+                return -1
+            curr = 1 + max(dfs(node.left, depth + 1), dfs(node.right, depth + 1))
+            depth_map[node.val] = depth
+            height[node.val] = curr
+            return curr
+
+        dfs(root, 0)
+
         
