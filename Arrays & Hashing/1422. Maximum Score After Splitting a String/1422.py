@@ -1,7 +1,12 @@
 class Solution:
     def maxScore(self, s: str) -> int:
         res = 0
-        # Exclude the last index to avoid an empty right part
-        for i in range(1, len(s)):  # Start from 1 to avoid an empty left part
-            res = max(res, s[:i].count('0') + s[i:].count('1'))
+        zero = 0
+        one = s.count('1')
+        for i in range(len(s) - 1):
+            if s[i] == '0':
+                zero += 1
+            else:
+                one -= 1
+            res = max(res, one + zero)
         return res
