@@ -5,10 +5,11 @@ class Solution:
         def dfs(i, prev, prev_count, k):
             if (i, prev, prev_count, k) in memo:
                 return memo[(i, prev, prev_count, k)]
-            if i == len(s):
-                return 0
             if k < 0:
                 return float('inf')
+            if i == len(s):
+                return 0
+            
 
             if s[i] == prev:
                 inc = 1 if prev_count in [1, 9, 99] else 0
