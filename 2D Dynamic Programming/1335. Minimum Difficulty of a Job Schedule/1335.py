@@ -15,4 +15,17 @@ class Solution:
                 return memo[(i, d, curr_max)]
             
             # update curr_max --> since the order of jobDifficulty is not in non-decreasing order necessarily
-            
+            curr_max = max(curr_max, jobDifficulty[i])
+
+            # recursive case: 
+            # 1. start a new day
+            # 2. continue the previous day
+            res = min(
+                curr_max + dfs(i + 1, d - 1, -1),
+                dfs(i + 1, d, curr_max)
+            )
+
+            memo[(i, d, curr_max)] = res
+            return res
+
+        
