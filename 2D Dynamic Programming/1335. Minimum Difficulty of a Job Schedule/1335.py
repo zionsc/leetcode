@@ -28,4 +28,4 @@ class Solution:
             memo[(i, d, curr_max)] = res
             return res
 
-        
+        return dfs(0, d, -1)
