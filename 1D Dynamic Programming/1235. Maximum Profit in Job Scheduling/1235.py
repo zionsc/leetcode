@@ -14,4 +14,5 @@ class Solution:
             next_compatible = bisect.bisect_left(start, (endTime[start[i][1]], 0), i + 1)
             # we take the job, or we take the optimal solution that was considered before our job (dp[i + 1])
             dp[i] = max(dp[i + 1], profit[start[i][1]] + dp[next_compatible])
+            
         return dp[0]
