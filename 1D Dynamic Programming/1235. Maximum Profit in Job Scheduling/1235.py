@@ -7,4 +7,6 @@ class Solution:
         # keep track of the start time and the index in order to match with the endtime and profit later
         start = [(startTime[i], i) for i in range(n)]
 
-        
+
+        # we take the job, or we take the optimal solution that was considered before our job (dp[i + 1])
+        dp[i] = max(dp[i + 1], profit[start[i][1]] + dp[next_compatible])
