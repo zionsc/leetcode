@@ -18,8 +18,8 @@ class Solution:
                 # smaller start-->end submatrices will all be considered in later iterations (bigger ones)
                 count[0] = 1 # a sum of 0 has been seen once (since if we find a sum == target, then we need to add it to res)
                 for c in range(col):
-                    curr_sum = sub_sum[r2][c] - (
-                        sub_sum[r1][c] if r1 > 0 else 0
+                    curr_sum = sub_sum[r_end][c] - (
+                        sub_sum[r_start - 1][c] if r_start > 0 else 0
                     )
                     diff = curr_sum - target
                     res += count[diff]
