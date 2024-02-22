@@ -8,7 +8,8 @@ class Solution:
         def dfs(node, prev):
             longest_path = 0
             for nei in adj_list[node]:
-                if nei == node:
+                curr_path = 0
+                if nei == prev:
                     continue
                 curr_path = 1 + dfs(nei, node)
                 self.diameter = max(self.diameter, longest_path + curr_path)
