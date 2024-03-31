@@ -9,12 +9,14 @@ public:
 
         long long res=0;
         int l=0;
-        int lastMin,lastMax=-1;
+        int lastMin=-1;
+        int lastMax=-1;
 
         for(int r=0; r<nums.size(); ++r){
             if(nums[r]<minK || nums[r]>maxK){
                 l=r+1;
-                lastMin,lastMax=-1;
+                lastMin=-1;
+                lastMax=-1;
             }
             if(nums[r]==minK){
                 lastMin=r;
