@@ -2,24 +2,18 @@
 
 class Solution {
 public:
-    std::string makeGood(std::string s) {
+    string makeGood(string s) {
         ios_base::sync_with_stdio(0);
         cin.tie(0);
         cout.tie(0);
 
-        std::stack<char> st;
-        for(char c : s) {
-            if(!st.empty() && (std::toupper(st.top()) == std::toupper(c)) && (st.top() != c)) {
-                st.pop();
-            } else {
-                st.push(c);
+        string res="";
+        for(char c : s){
+            if(!res.empty() && toupper(res.back())==toupper(c) && c-res.back()!=0){
+                res.pop_back();
+            } else{
+                res.push_back(c);
             }
-        }
-
-        std::string res = "";
-        while(!st.empty()) {
-            res = st.top() + res;
-            st.pop();
         }
         return res;
     }
