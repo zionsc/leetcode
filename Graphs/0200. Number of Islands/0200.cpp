@@ -7,7 +7,7 @@ struct pair_hash {
         auto hash2=std::hash<T2>{}(pair.second);
         return hash1^hash2;
     }
-}
+};
 
 class Solution {
 public:
@@ -15,7 +15,7 @@ public:
     int rows=0;
     int cols=0;
 
-    void bfs(int row, int col, vector<vector<>char>& grid) {
+    void bfs(int row, int col, vector<vector<char>>& grid) {
         deque<pair<int,int>>q;
         q.push_back({row,col});
         visited.insert({row,col});
@@ -55,5 +55,6 @@ public:
                 }
             }
         }
+        return res;
     }
 };
