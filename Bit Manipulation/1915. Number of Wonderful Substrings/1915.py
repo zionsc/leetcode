@@ -12,4 +12,3 @@ class Solution:
         count[mask]+=1
 
     return res
-    
