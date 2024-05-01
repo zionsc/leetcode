@@ -1,6 +1,6 @@
 class Solution:
     def countPairs(self, nums1: List[int], nums2: List[int]) -> int:
-        nums3=[a-b for a,b in zip(nums1,num2)]
+        nums3=[a-b for a,b in zip(nums1,nums2)]
         nums3.sort()
         
         res=0
