@@ -8,7 +8,7 @@ class Solution:
         while(l<r):
             if(nums3[l]+nums3[r]>0):
                 res+=r-l
-                r-=1
             else:
+                r-=1
                 l+=1
         return res
