@@ -7,7 +7,7 @@ class Solution:
             if i==len(s):
                 res.append(currPartition.copy())
                 return
-            for j in range(len(s)):
+            for j in range(i,len(s)):
                 if self.isPalindrome(i,j,s):
                     currPartition.append(s[i:j+1])
                     dfs(j+1)
