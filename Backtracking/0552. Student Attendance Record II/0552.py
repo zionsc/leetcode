@@ -1,10 +1,6 @@
 class Solution:
     def checkRecord(self, n: int) -> int:
         MOD=10**9+7
-        if (n==0):
-            return 1
-        if (n==1):
-            return 3
 
         memo=[[[0]*3 for _ in range(2)] for _ in range(n+1)] # memo[idx][numAbsences][consecutiveLate]
         memo[0][0][0]=1
